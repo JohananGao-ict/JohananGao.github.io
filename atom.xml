@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-12T13:44:09.834Z</updated>
+  <updated>2018-03-13T14:07:22.970Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android开发准备</title>
+    <link href="http://yoursite.com/2018/03/13/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87/"/>
+    <id>http://yoursite.com/2018/03/13/安卓开发准备/</id>
+    <published>2018-03-13T14:05:00.513Z</published>
+    <updated>2018-03-13T14:07:22.970Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="必要条件"><a href="#必要条件" class="headerlink" title="必要条件"></a>必要条件</h2><ul><li>编程语言：java、kotlin等</li><li>开发环境：JDK、android studion推荐</li></ul><p>曾经android风靡时，大家流行用eclipse+ADT+SDK方式开发安卓应用程序，自从google推出了android studio之后就停止了对ecplise的android相关插件的更新，还有android studio方便好用界面美观，因此赢得大家的青睐</p><h2 id="相关网站"><a href="#相关网站" class="headerlink" title="相关网站"></a>相关网站</h2><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html" target="_blank" rel="noopener">JDK官网</a><br><a href="http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio 中文社区</a><br><a href="https://developer.android.com" target="_blank" rel="noopener">android官方网站</a><br><em>注意：科学上网</em>  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;必要条件&quot;&gt;&lt;a href=&quot;#必要条件&quot; class=&quot;headerlink&quot; title=&quot;必要条件&quot;&gt;&lt;/a&gt;必要条件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;编程语言：java、kotlin等&lt;/li&gt;
+&lt;li&gt;开发环境：JDK、android studion推荐&lt;/l
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>域名解析所遇琐事</title>
