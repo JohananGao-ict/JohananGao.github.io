@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-14T14:47:06.314Z</updated>
+  <updated>2018-03-14T14:51:20.478Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/03/14/anroid%20studio%E7%9A%84%E7%BC%96%E8%AF%91/"/>
     <id>http://yoursite.com/2018/03/14/anroid studio的编译/</id>
     <published>2018-03-14T14:46:25.192Z</published>
-    <updated>2018-03-14T14:47:06.314Z</updated>
+    <updated>2018-03-14T14:51:20.478Z</updated>
     
     <content type="html"><![CDATA[<hr><h2 id="title-android-studio的编译"><a href="#title-android-studio的编译" class="headerlink" title="title: android studio的编译"></a>title: android studio的编译</h2><h2 id="AndroidStudio中make-Project、clean-Project、Rebuild-Project的区别"><a href="#AndroidStudio中make-Project、clean-Project、Rebuild-Project的区别" class="headerlink" title="AndroidStudio中make Project、clean Project、Rebuild Project的区别"></a>AndroidStudio中make Project、clean Project、Rebuild Project的区别</h2><ol><li>Make Project：编译Project下所有Module，一般是自上次编译后Project下有更新的文件，不生成apk</li><li>Make Selected Modules：编译指定的Module，一般是自上次编译后Module下有更新的文件，不生成apk<br>3.Clean Project：删除之前编译后的编译文件，并重新编译整个Project，比较花费时间，不生成apk</li><li>Rebuild Project：先执行Clean操作，删除之前编译的编译文件和可执行文件，然后重新编译新的编译文件，不生成apk，这里效果其实跟Clean Project是一致的，这个不知道Google搞什么鬼～～</li><li>Build APK：前面4个选项都是编译，没有生成apk文件，如果想生成apk，需要点击Build APK</li><li>Generate Signed APK：生成有签名的apk  </li></ol><p>推荐书籍：<a href="https://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8" target="_blank" rel="noopener">anroid实用指南</a><br>推荐一款编辑工具：<a href="https://www.sublimetext.com/" target="_blank" rel="noopener">sublime text3</a><br><a href="https://www.cnblogs.com/lianghe01/p/6259769.html" target="_blank" rel="noopener">致谢网友lianghe的贡献</a>  </p>]]></content>
     
