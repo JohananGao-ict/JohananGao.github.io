@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-14T15:21:32.942Z</updated>
+  <updated>2018-06-01T12:53:14.099Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python开发QT</title>
+    <link href="http://yoursite.com/2018/06/01/pytho+PyQt5/"/>
+    <id>http://yoursite.com/2018/06/01/pytho+PyQt5/</id>
+    <published>2018-06-01T12:50:51.006Z</published>
+    <updated>2018-06-01T12:53:14.099Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-条件："><a href="#1-条件：" class="headerlink" title="1.条件："></a>1.条件：</h2><ul><li>安装python3.x，记得选择pip选项  </li><li>pip3 install sip(dos中输入)</li><li>pip3 install PyQt5  </li></ul><h2 id="2-打包exe"><a href="#2-打包exe" class="headerlink" title="2.打包exe"></a>2.打包exe</h2><ul><li>安装pyinstaller：在cmd中输入pip install pyinstaller　　 </li><li>打包命令：在cmd中输入pyinstaller -F -w <strong>xxx.py</strong>  </li></ul><hr><p>py -2 xx.py 选择python2.x版本<br>py -3 xx.py 选择python3.x版本<br>也可以在.py文件中指定#！ python3<br>运行py文件：py xx.py<br>进入python shell终端：输入python按回车<br>查看python版本：python –version</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-条件：&quot;&gt;&lt;a href=&quot;#1-条件：&quot; class=&quot;headerlink&quot; title=&quot;1.条件：&quot;&gt;&lt;/a&gt;1.条件：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;安装python3.x，记得选择pip选项  &lt;/li&gt;
+&lt;li&gt;pip3 install sip(do
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>android studio编译</title>
