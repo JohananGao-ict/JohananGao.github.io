@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-02T15:54:49.883Z</updated>
+  <updated>2018-06-02T15:56:50.049Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
+    <title>python环境搭建</title>
     <link href="http://yoursite.com/2018/06/02/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2018/06/02/python环境搭建/</id>
     <published>2018-06-02T15:35:27.986Z</published>
-    <updated>2018-06-02T15:54:49.883Z</updated>
+    <updated>2018-06-02T15:56:50.049Z</updated>
     
     <content type="html"><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">anaconda</a><br><a href="https://www.jetbrains.com/pycharm/download/#section=windows%20Q%204" target="_blank" rel="noopener">pycharm</a>  </p><p>anaconda指的是一个开源的Python发行版本，装了anaconda就不需要装python了。  </p>]]></content>
     
