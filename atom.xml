@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-01T12:53:14.099Z</updated>
+  <updated>2018-06-02T06:42:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>python开发QT</title>
-    <link href="http://yoursite.com/2018/06/01/pytho+PyQt5/"/>
-    <id>http://yoursite.com/2018/06/01/pytho+PyQt5/</id>
-    <published>2018-06-01T12:50:51.006Z</published>
-    <updated>2018-06-01T12:53:14.099Z</updated>
+    <title></title>
+    <link href="http://yoursite.com/2018/06/02/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2018/06/02/python环境搭建/</id>
+    <published>2018-06-02T15:35:27.986Z</published>
+    <updated>2018-06-02T06:42:20.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1-条件："><a href="#1-条件：" class="headerlink" title="1.条件："></a>1.条件：</h2><ul><li>安装python3.x，记得选择pip选项  </li><li>pip3 install sip(dos中输入)</li><li>pip3 install PyQt5  </li></ul><h2 id="2-打包exe"><a href="#2-打包exe" class="headerlink" title="2.打包exe"></a>2.打包exe</h2><ul><li>安装pyinstaller：在cmd中输入pip install pyinstaller　　 </li><li>打包命令：在cmd中输入pyinstaller -F -w <strong>xxx.py</strong>  </li></ul><hr><p>py -2 xx.py 选择python2.x版本<br>py -3 xx.py 选择python3.x版本<br>也可以在.py文件中指定#！ python3<br>运行py文件：py xx.py<br>进入python shell终端：输入python按回车<br>查看python版本：python –version</p>]]></content>
+    <content type="html"><![CDATA[<hr><h2 id="title-python环境搭建"><a href="#title-python环境搭建" class="headerlink" title="title: python环境搭建"></a>title: python环境搭建</h2><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">anaconda</a><br><a href="https://www.jetbrains.com/pycharm/download/#section=windows%20Q%204" target="_blank" rel="noopener">pycharm</a>  </p><p>anaconda指的是一个开源的Python发行版本，装了anaconda就不需要装python了。  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h2 id=&quot;title-python环境搭建&quot;&gt;&lt;a href=&quot;#title-python环境搭建&quot; class=&quot;headerlink&quot; title=&quot;title: python环境搭建&quot;&gt;&lt;/a&gt;title: python环境搭建&lt;/h2&gt;&lt;h2 id=&quot;工具
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python开发QT</title>
+    <link href="http://yoursite.com/2018/06/01/python%E5%BC%80%E5%8F%91QT/"/>
+    <id>http://yoursite.com/2018/06/01/python开发QT/</id>
+    <published>2018-06-01T12:50:51.006Z</published>
+    <updated>2018-06-02T15:37:20.135Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-条件："><a href="#1-条件：" class="headerlink" title="1.条件："></a>1.条件：</h2><ul><li>安装python3.x，记得选择pip选项  </li><li>pip3 install sip(dos中输入)</li><li>pip3 install PyQt5  </li></ul><h2 id="2-打包exe"><a href="#2-打包exe" class="headerlink" title="2.打包exe"></a>2.打包exe</h2><ul><li>安装pyinstaller：在cmd中输入pip install pyinstaller　　 </li><li>打包命令：在cmd中输入pyinstaller -F -w <strong>xxx.py</strong><br>-F, –onefile 打包成一个exe文件。<br>-D, –onedir 创建一个目录，包含exe文件，但会依赖很多文件（默认选项）。<br>-c, –console, –nowindowed 使用控制台，无界面(默认)<br>-w, –windowed, –noconsole 使用窗口，无控制台<br>-i：是程序图标，app.py是你要打包的py文件  -i xx.icon   </li></ul><hr><p>py -2 xx.py 选择python2.x版本<br>py -3 xx.py 选择python3.x版本<br>也可以在.py文件中指定#！ python3<br>运行py文件：py xx.py<br>进入python shell终端：输入python按回车<br>查看python版本：python –version</p>]]></content>
     
     <summary type="html">
     
