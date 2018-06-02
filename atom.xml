@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-02T06:42:20.000Z</updated>
+  <updated>2018-06-02T15:53:26.723Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>python环境搭建</title>
     <link href="http://yoursite.com/2018/06/02/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2018/06/02/python环境搭建/</id>
     <published>2018-06-02T15:35:27.986Z</published>
-    <updated>2018-06-02T06:42:20.000Z</updated>
+    <updated>2018-06-02T15:53:26.723Z</updated>
     
-    <content type="html"><![CDATA[<hr><h2 id="title-python环境搭建"><a href="#title-python环境搭建" class="headerlink" title="title: python环境搭建"></a>title: python环境搭建</h2><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">anaconda</a><br><a href="https://www.jetbrains.com/pycharm/download/#section=windows%20Q%204" target="_blank" rel="noopener">pycharm</a>  </p><p>anaconda指的是一个开源的Python发行版本，装了anaconda就不需要装python了。  </p>]]></content>
+    <content type="html"><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">anaconda</a><br><a href="https://www.jetbrains.com/pycharm/download/#section=windows%20Q%204" target="_blank" rel="noopener">pycharm</a>  </p><p>anaconda指的是一个开源的Python发行版本，装了anaconda就不需要装python了。  </p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;h2 id=&quot;title-python环境搭建&quot;&gt;&lt;a href=&quot;#title-python环境搭建&quot; class=&quot;headerlink&quot; title=&quot;title: python环境搭建&quot;&gt;&lt;/a&gt;title: python环境搭建&lt;/h2&gt;&lt;h2 id=&quot;工具
+        &lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.anaconda.com/download/&quot; target=&quot;_blank&quot; rel=&quot;noop
       
     
     </summary>
