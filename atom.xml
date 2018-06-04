@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-04T12:20:47.165Z</updated>
+  <updated>2018-06-04T03:00:44.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows下安装MinGW</title>
+    <link href="http://yoursite.com/2018/06/04/Windows%E4%B8%8B%E5%AE%89%E8%A3%85MinGW/"/>
+    <id>http://yoursite.com/2018/06/04/Windows下安装MinGW/</id>
+    <published>2018-06-04T12:23:05.117Z</published>
+    <updated>2018-06-04T03:00:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>MinGW是一套集成编译器，mingw32-make是mingw的make工具，mingw32-gcc是mingw的c编译器, mingw32-g++是mingw的c++编译器。</p><p>MinGW官方网址：<a href="http://www.mingw.org" target="_blank" rel="noopener">www.mingw.org</a>，下载mingw-get-setup.exe</p><p>设置环境变量，例如：C:\MinGW\bin，修改mingw32-make为make可以在windows系统下make Makefile  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;MinGW是一套集成编译器，mingw32-make是mingw的make工具，mingw32-gcc是mingw的c编译器, mingw32-g++是mingw的c++编译器。&lt;/p&gt;
+&lt;p&gt;MinGW官方网址：&lt;a href=&quot;http://www.mingw.org&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Markdown语法</title>
