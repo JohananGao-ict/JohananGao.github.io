@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-13T06:33:02.000Z</updated>
+  <updated>2018-06-13T06:34:12.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C语言中的柔性数组</title>
+    <link href="http://yoursite.com/2018/06/13/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%9F%94%E6%80%A7%E6%95%B0%E7%BB%84/"/>
+    <id>http://yoursite.com/2018/06/13/C语言中的柔性数组/</id>
+    <published>2018-06-13T12:55:35.536Z</published>
+    <updated>2018-06-13T06:34:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>柔性数组即数组大小待定的数组，应用在了变长结构体中 </p><p>C语言中可以由结构体产生柔性数组</p><p>C语言中结构体的最后一个元素可以是大小未知的数组</p><p>用法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">struct SoftArray</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    int array[];</span><br><span class="line">&#125;;</span><br><span class="line">//....</span><br><span class="line">struct SoftArray *sa=NULL;</span><br><span class="line">sa=(struct SoftArray*)malloc(sizeof(struct SoftArray)+sizeof(int)*5);</span><br><span class="line">sa-&gt;len=5;</span><br></pre></td></tr></table></figure><p>sizeof(struct SoftArray)=4</p><p>struct SoftArray中的array仅是一个待使用的标示符，不占用存储空间</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;柔性数组即数组大小待定的数组，应用在了变长结构体中 &lt;/p&gt;
+&lt;p&gt;C语言中可以由结构体产生柔性数组&lt;/p&gt;
+&lt;p&gt;C语言中结构体的最后一个元素可以是大小未知的数组&lt;/p&gt;
+&lt;p&gt;用法：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>C++中的拷贝构造函数</title>
