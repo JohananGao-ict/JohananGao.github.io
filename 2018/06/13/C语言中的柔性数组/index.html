@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="菜鸟记录">
 <meta property="og:description" content="柔性数组即数组大小待定的数组，应用在了变长结构体中  C语言中可以由结构体产生柔性数组 C语言中结构体的最后一个元素可以是大小未知的数组 用法： 123456789struct SoftArray&amp;#123;    int len;    int array[];&amp;#125;;//....struct SoftArray *sa=NULL;sa=(struct SoftArray*)malloc(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T06:34:12.000Z">
+<meta property="og:updated_time" content="2018-06-18T13:57:49.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言中的柔性数组">
 <meta name="twitter:description" content="柔性数组即数组大小待定的数组，应用在了变长结构体中  C语言中可以由结构体产生柔性数组 C语言中结构体的最后一个元素可以是大小未知的数组 用法： 123456789struct SoftArray&amp;#123;    int len;    int array[];&amp;#125;;//....struct SoftArray *sa=NULL;sa=(struct SoftArray*)malloc(">
@@ -337,7 +337,7 @@
 <p>C语言中可以由结构体产生柔性数组</p>
 <p>C语言中结构体的最后一个元素可以是大小未知的数组</p>
 <p>用法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">struct SoftArray</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    int array[];</span><br><span class="line">&#125;;</span><br><span class="line">//....</span><br><span class="line">struct SoftArray *sa=NULL;</span><br><span class="line">sa=(struct SoftArray*)malloc(sizeof(struct SoftArray)+sizeof(int)*5);</span><br><span class="line">sa-&gt;len=5;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SoftArray</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">array</span>[];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//....</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SoftArray</span> *<span class="title">sa</span>=<span class="title">NULL</span>;</span></span><br><span class="line">sa=(struct SoftArray*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct SoftArray)+<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*<span class="number">5</span>);</span><br><span class="line">sa-&gt;len=<span class="number">5</span>;</span><br></pre></td></tr></table></figure>
 <p>sizeof(struct SoftArray)=4</p>
 <p>struct SoftArray中的array仅是一个待使用的标示符，不占用存储空间</p>
 
