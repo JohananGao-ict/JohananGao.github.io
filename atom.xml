@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-19T11:25:46.000Z</updated>
+  <updated>2018-06-19T11:28:52.078Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/06/19/C++%E6%A0%87%E5%87%86%E5%BA%93/"/>
     <id>http://yoursite.com/2018/06/19/C++标准库/</id>
     <published>2018-06-19T11:26:00.323Z</published>
-    <updated>2018-06-19T11:25:46.000Z</updated>
+    <updated>2018-06-19T11:28:52.078Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="C-标准库"><a href="#C-标准库" class="headerlink" title="C++标准库"></a>C++标准库</h2><p>C++标准库并不是C++语言的一部分</p><p>C++标准库是由类库和函数库组成的集合</p><p>C++标准库中定义的类和对象都位于std命名空间中</p><p>C++标准库的头文件都不带.h后缀</p><p>C++标准库涵盖了C库的功能</p><h2 id="C-标准库预定义了多数常用的数据结构"><a href="#C-标准库预定义了多数常用的数据结构" class="headerlink" title="C++标准库预定义了多数常用的数据结构"></a>C++标准库预定义了多数常用的数据结构</h2><p>-<bitset>    -<set>    -<cstdio></cstdio></set></bitset></p><p>-<deque>    -<stack>    -<cstring></cstring></stack></deque></p><p>-<list>    -<vector>    -<cstdlib></cstdlib></vector></list></p><p>-<queue>    -<map>    -<cmath></cmath></map></queue></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="C-标准库"><a href="#C-标准库" class="headerlink" title="C++标准库"></a>C++标准库</h2><p>C++标准库并不是C++语言的一部分</p><p>C++标准库是由类库和函数库组成的集合</p><p>C++标准库中定义的类和对象都位于std命名空间中</p><p>C++标准库的头文件都不带.h后缀</p><p>C++标准库涵盖了C库的功能</p><h2 id="C-标准库预定义了多数常用的数据结构"><a href="#C-标准库预定义了多数常用的数据结构" class="headerlink" title="C++标准库预定义了多数常用的数据结构"></a>C++标准库预定义了多数常用的数据结构</h2><p>bitset    set    cstdio</p><p>deque    stack    cstring</p><p>list    vector    cstdlib</p><p>queue    map    cmath</p>]]></content>
     
     <summary type="html">
     
