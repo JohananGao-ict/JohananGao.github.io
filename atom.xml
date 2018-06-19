@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-19T11:28:52.078Z</updated>
+  <updated>2018-06-19T11:30:59.850Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++标准库string类型</title>
+    <link href="http://yoursite.com/2018/06/19/C++%E6%A0%87%E5%87%86%E5%BA%93string%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://yoursite.com/2018/06/19/C++标准库string类型/</id>
+    <published>2018-06-19T11:30:24.105Z</published>
+    <updated>2018-06-19T11:30:59.850Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="C-标准库提供了string类型"><a href="#C-标准库提供了string类型" class="headerlink" title="C++标准库提供了string类型"></a>C++标准库提供了string类型</h2><p>-string直接支持字符串连接</p><p>-string直接支持字符串的大小比较</p><p>-string直接支持子串查找和提取</p><p>-string直接支持字符串的插入和替换</p><h2 id="字符串和数字的转换"><a href="#字符串和数字的转换" class="headerlink" title="字符串和数字的转换"></a>字符串和数字的转换</h2><p>-标准库中提供了相关的类对字符串和数字进行转换</p><p>-字符串流类（sstream）用于string的转换</p><ul><li><p><sstream>-相关头文件</sstream></p></li><li><p>istringstream-字符串输入流</p></li><li><p>ostringstream-字符串输出流</p><p>使用方法：</p><p>-string—–&gt;数字</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">istringstream</span> <span class="title">iss</span><span class="params">(<span class="string">"123.45"</span>)</span></span>;</span><br><span class="line"><span class="keyword">double</span> num;</span><br><span class="line">iss&gt;&gt;num;</span><br></pre></td></tr></table></figure><p>-数字—–&gt;string</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ostringstream</span> oss;</span><br><span class="line">oss&lt;&lt;<span class="number">543.21</span>;</span><br><span class="line"><span class="built_in">string</span> s=oss.str();</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;C-标准库提供了string类型&quot;&gt;&lt;a href=&quot;#C-标准库提供了string类型&quot; class=&quot;headerlink&quot; title=&quot;C++标准库提供了string类型&quot;&gt;&lt;/a&gt;C++标准库提供了string类型&lt;/h2&gt;&lt;p&gt;-string直接支持字
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>C++标准库</title>
