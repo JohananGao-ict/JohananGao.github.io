@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-19T11:30:59.850Z</updated>
+  <updated>2018-06-20T08:12:54.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>new关键字与命名空间</title>
+    <link href="http://yoursite.com/2018/06/20/new%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%8E%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/"/>
+    <id>http://yoursite.com/2018/06/20/new关键字与命名空间/</id>
+    <published>2018-06-20T12:03:21.575Z</published>
+    <updated>2018-06-20T08:12:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="new关键字的初始化"><a href="#new关键字的初始化" class="headerlink" title="new关键字的初始化"></a>new关键字的初始化</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* pi = <span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">1</span>);            <span class="comment">//并初始化</span></span><br><span class="line"><span class="keyword">int</span>* a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;  <span class="comment">//数组申请并初始化</span></span><br></pre></td></tr></table></figure><h2 id="C-命名空间的使用"><a href="#C-命名空间的使用" class="headerlink" title="C++命名空间的使用"></a>C++命名空间的使用</h2><p>-使用整个命名空间：using namespace name；</p><p>-使用命名空间中的变量：using name::variable;</p><p>-使用默认命名空间中的变量: ::variable</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">namespace</span> First</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> Second</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">namespace</span> Internal</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">P</span></span></span><br><span class="line"><span class="class">        &#123;</span></span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="keyword">int</span> y;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> First;</span><br><span class="line">    <span class="keyword">using</span> Second::Internal::P;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"First::i = %d\n"</span>, i);            <span class="comment">// 0</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Second::i = %d\n"</span>, Second::i);   <span class="comment">// 1</span></span><br><span class="line">    P p = &#123;<span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"p.x = %d\n"</span>, p.x);              <span class="comment">//  2</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"p.y = %d\n"</span>, p.y);              <span class="comment">//  3</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;new关键字的初始化&quot;&gt;&lt;a href=&quot;#new关键字的初始化&quot; class=&quot;headerlink&quot; title=&quot;new关键字的初始化&quot;&gt;&lt;/a&gt;new关键字的初始化&lt;/h2&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>C++标准库string类型</title>
