@@ -266,6 +266,137 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/gcc编译器gdb调试器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Johanan Gao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/21/gcc编译器gdb调试器/" itemprop="url">gcc编译器gdb调试器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T17:07:31+08:00">
+                2018-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="gcc编译器"><a href="#gcc编译器" class="headerlink" title="gcc编译器"></a>gcc编译器</h4><ul>
+<li><p>gcc参数：</p>
+<p>-E 预处理生成.i文件<br>-S 编译生成汇编文件.s文件<br>-c 汇编器生成目标文件.o文件<br>-I 指定头文件路径<br>-L 指定库路径<br>-l 指定库，例如：-lm指定libm.so(math库)<br>-D gcc编译时添加宏<br>-O0 优化级别0不优化，最高优化级别是3(0~3)<br>-Wall 输出警告信息<br>-g gdb调试</p>
+</li>
+</ul>
+<h4 id="gdb调试"><a href="#gdb调试" class="headerlink" title="gdb调试"></a>gdb调试</h4><ul>
+<li><p>gdb参数：</p>
+<p>l 列出源码,例如：l main.c:0 从0行开始列出main.c的内容<br>b 设置断点，例如：break 2或者b 2 在第2行设置断点<br>i info，例如：i b列所设置的断点<br>start 开始执行，停在第一执行语句<br>r 重新开始运行文件run<br>n 单步调试next，也可不进入函数体内部<br>c 执行到下一个断点停止continue<br>s 进入到函数体内部step<br>finish 从函数体内部跳出<br>p i查看变量的值print<br>ptype i查看变量的类型<br>display i追踪变量i<br>info display查看变量编号<br>undisplay n取消追踪变量<br>u 跳出本次循环<br>d n删除断点，info break获取断点编号<br>set var i=10 设置某个变量值为10<br>q 退出gdb(quit)</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/静态库动态库制作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1439,151 +1570,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/C++强制类型转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Johanan Gao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="菜鸟记录">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/11/C++强制类型转换/" itemprop="url">C++强制类型转换</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T20:34:58+08:00">
-                2018-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>C++将强制类型转换分为4种不同的类型：</p>
-<ul>
-<li>static_cast</li>
-<li>const_cast</li>
-<li>dynamic_cast</li>
-<li>reinterpret_cast      </li>
-</ul>
-<p>用法：xxx_cast<type>(Expression) </type></p>
-<h2 id="static-cast强制类型转换"><a href="#static-cast强制类型转换" class="headerlink" title="static_cast强制类型转换"></a>static_cast强制类型转换</h2><p>用于基本类型间的转换</p>
-<p>不能用于基本类型指针间的转换</p>
-<p>用于有继承关系类对象之间的转换和类指针之间的转换</p>
-<h2 id="const-cast-强制类型转换"><a href="#const-cast-强制类型转换" class="headerlink" title="const_cast 强制类型转换"></a>const_cast 强制类型转换</h2><p>用于去除变量的只读属性 </p>
-<p>强制转换的目标类型必须是指针或引用    </p>
-<h2 id="reinterpret-cast强制类型转换"><a href="#reinterpret-cast强制类型转换" class="headerlink" title="reinterpret_cast强制类型转换"></a>reinterpret_cast强制类型转换</h2><p>用于指针类型间的强制转换</p>
-<p>用于整数和指针类型间的强制转换</p>
-<h2 id="dynamic-cast强制类型转换"><a href="#dynamic-cast强制类型转换" class="headerlink" title="dynamic_cast强制类型转换"></a>dynamic_cast强制类型转换</h2><p>用于有继承关系的类指针间的转换</p>
-<p>用于有交叉关系的类指针间的转换</p>
-<p>具有类型检查的功能</p>
-<p>需要虚函数的支持</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1633,7 +1624,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-21T04:41:11.646Z</updated>
+  <updated>2018-11-21T09:08:34.909Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>gcc编译器gdb调试器</title>
+    <link href="http://yoursite.com/2018/11/21/gcc%E7%BC%96%E8%AF%91%E5%99%A8gdb%E8%B0%83%E8%AF%95%E5%99%A8/"/>
+    <id>http://yoursite.com/2018/11/21/gcc编译器gdb调试器/</id>
+    <published>2018-11-21T09:07:31.837Z</published>
+    <updated>2018-11-21T09:08:34.909Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="gcc编译器"><a href="#gcc编译器" class="headerlink" title="gcc编译器"></a>gcc编译器</h4><ul><li><p>gcc参数：</p><p>-E 预处理生成.i文件<br>-S 编译生成汇编文件.s文件<br>-c 汇编器生成目标文件.o文件<br>-I 指定头文件路径<br>-L 指定库路径<br>-l 指定库，例如：-lm指定libm.so(math库)<br>-D gcc编译时添加宏<br>-O0 优化级别0不优化，最高优化级别是3(0~3)<br>-Wall 输出警告信息<br>-g gdb调试</p></li></ul><h4 id="gdb调试"><a href="#gdb调试" class="headerlink" title="gdb调试"></a>gdb调试</h4><ul><li><p>gdb参数：</p><p>l 列出源码,例如：l main.c:0 从0行开始列出main.c的内容<br>b 设置断点，例如：break 2或者b 2 在第2行设置断点<br>i info，例如：i b列所设置的断点<br>start 开始执行，停在第一执行语句<br>r 重新开始运行文件run<br>n 单步调试next，也可不进入函数体内部<br>c 执行到下一个断点停止continue<br>s 进入到函数体内部step<br>finish 从函数体内部跳出<br>p i查看变量的值print<br>ptype i查看变量的类型<br>display i追踪变量i<br>info display查看变量编号<br>undisplay n取消追踪变量<br>u 跳出本次循环<br>d n删除断点，info break获取断点编号<br>set var i=10 设置某个变量值为10<br>q 退出gdb(quit)</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;gcc编译器&quot;&gt;&lt;a href=&quot;#gcc编译器&quot; class=&quot;headerlink&quot; title=&quot;gcc编译器&quot;&gt;&lt;/a&gt;gcc编译器&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;gcc参数：&lt;/p&gt;
+&lt;p&gt;-E 预处理生成.i文件&lt;br&gt;-S 编译生成汇编文件.s文件
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>静态库动态库制作</title>
@@ -438,27 +461,6 @@
       
       
         &lt;p&gt;大家都知道买了域名之后要做的事就是&lt;strong&gt;域名解析、备案&lt;/strong&gt;两件事。不解析的域名是不能够正常访问的因为DNS上没有记录；备案对于购买国外服务器是不需要备案也不能备案，若是国内服务器那是必须强制备案，否者是没有经营权的，注意备案之前也必须实名认证。&lt;/p
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/03/10/hello-world/"/>
-    <id>http://yoursite.com/2018/03/10/hello-world/</id>
-    <published>2018-03-10T15:42:03.384Z</published>
-    <updated>2018-03-14T15:13:32.062Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
       
     
     </summary>
