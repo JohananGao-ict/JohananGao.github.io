@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-21T04:30:34.854Z</updated>
+  <updated>2018-11-21T04:35:00.248Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/11/21/%E9%9D%99%E6%80%81%E5%BA%93%E5%8A%A8%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C/"/>
     <id>http://yoursite.com/2018/11/21/静态库动态库制作/</id>
     <published>2018-11-21T04:29:04.646Z</published>
-    <updated>2018-11-21T04:30:34.854Z</updated>
+    <updated>2018-11-21T04:35:00.248Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="1-静态库制作"><a href="#1-静态库制作" class="headerlink" title="1.静态库制作"></a>1.静态库制作</h4><ol><li><p>命名规则：lib+库名+.a</p></li><li><p>制作步骤：</p><p>1)、生成.o文件</p><p>2)、将.o文件打包 ar rcs libxx.a xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>静态库的优缺点：</p><p>优点：分布程序的时候，不需要提供对应的库、加载库的速度快</p><p>缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编译程序</p></li></ol><h4 id="2-动态库制作"><a href="#2-动态库制作" class="headerlink" title="2.动态库制作"></a>2.动态库制作</h4><ol><li><p>命名规则：lib+库名+.so</p></li><li><p>制作步骤：</p><p>1)、生成位置无关的.o文件 gcc -fPIC -c <em>.c<br>2)、将.o文件打包 gcc -shared -o libxx.so </em>.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>解决动态库不能链接问题：<br>vi /etc/ld.so.conf<br>sudo ldconfig -v</p></li><li><p>动态库的优缺点：<br>优点：执行程序体积小、动态库更新了，不需要重新编译程序，函数接口不变<br>缺点：发布程序的时候，需要将动态库提供给用户、动态库没有打包到应用程序中，加载速度相对较慢</p></li></ol><p>nm命令列出目标文件的符号信息<br>ldd命令(list, dynamic, dependencies)：列出动态库依赖关系</p>]]></content>
+    <content type="html"><![CDATA[<h4 id="1-静态库制作"><a href="#1-静态库制作" class="headerlink" title="1.静态库制作"></a>1.静态库制作</h4><ol><li><p>命名规则：lib+库名+.a</p></li><li><p>制作步骤：</p><p>1)、生成.o文件</p><p>2)、将.o文件打包 ar rcs libxx.a xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>静态库的优缺点：</p><p>优点：分布程序的时候，不需要提供对应的库、加载库的速度快</p><p>缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编译程序</p></li></ol><h4 id="2-动态库制作"><a href="#2-动态库制作" class="headerlink" title="2.动态库制作"></a>2.动态库制作</h4><ol><li><p>命名规则：lib+库名+.so</p></li><li><p>制作步骤：</p><p>1)、生成位置无关的.o文件 gcc -fPIC -c <em>.c<br>2)、将.o文件打包 gcc -shared -o libxx.so </em>.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>解决动态库不能链接问题：<br>vi /etc/ld.so.conf<br>sudo ldconfig -v</p></li><li><p>动态库的优缺点：<br>优点：执行程序体积小、动态库更新了，不需要重新编译程序，函数接口不变<br>缺点：发布程序的时候，需要将动态库提供给用户、动态库没有打包到应用程序中，加载速度相对较慢</p></li></ol><p>nm命令列出目标文件的符号信息<br>ldd命令(list, dynamic, dependencies)：列出动态库依赖关系  </p>]]></content>
     
     <summary type="html">
     
