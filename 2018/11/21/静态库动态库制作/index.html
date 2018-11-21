@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="菜鸟记录">
 <meta property="og:description" content="1.静态库制作 命名规则：lib+库名+.a  制作步骤： 1)、生成.o文件 2)、将.o文件打包 ar rcs libxx.a xx.o3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx  静态库的优缺点： 优点：分布程序的时候，不需要提供对应的库、加载库的速度快 缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-21T04:35:00.248Z">
+<meta property="og:updated_time" content="2018-11-21T04:37:39.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="静态库动态库制作">
 <meta name="twitter:description" content="1.静态库制作 命名规则：lib+库名+.a  制作步骤： 1)、生成.o文件 2)、将.o文件打包 ar rcs libxx.a xx.o3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx  静态库的优缺点： 优点：分布程序的时候，不需要提供对应的库、加载库的速度快 缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编">
@@ -356,7 +356,8 @@
 <li><p>动态库的优缺点：<br>优点：执行程序体积小、动态库更新了，不需要重新编译程序，函数接口不变<br>缺点：发布程序的时候，需要将动态库提供给用户、动态库没有打包到应用程序中，加载速度相对较慢</p>
 </li>
 </ol>
-<p>nm命令列出目标文件的符号信息<br>ldd命令(list, dynamic, dependencies)：列出动态库依赖关系  </p>
+<p>nm命令列出目标文件的符号信息</p>
+<p> ldd命令(list, dynamic, dependencies)：列出动态库依赖关系</p>
 
       
     </div>
