@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-21T11:15:45.996Z</updated>
+  <updated>2018-11-21T11:20:37.265Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>单例模式</title>
+    <title>Makefile</title>
     <link href="http://yoursite.com/2018/11/21/Makefile/"/>
     <id>http://yoursite.com/2018/11/21/Makefile/</id>
     <published>2018-11-21T11:15:18.481Z</published>
-    <updated>2018-11-21T11:15:45.996Z</updated>
+    <updated>2018-11-21T11:20:37.265Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h4><ul><li><p>Makefile例子</p><p>obj = main.o add.o sub.o mul.o<br>target = app<br>#makefile中自己维护的变量<br>CC = gcc<br>CFLAGS = -O0 -g -Wall<br>LDFLAGS = -I -L<br>$(target):$(obj)</p><pre><code>$(CC) $^ -o $@</code></pre><p>%.o:%.c</p><pre><code>$(CC) -c $&lt; -o $@</code></pre><p>.PHONY : clean<br>clean:</p><pre><code>rm $(target) $(obj)</code></pre></li><li><p>变量</p><p>$@：目标<br>$^：所有依赖<br>$&lt;：依赖列表中的第一个依赖<br>make -C ./BL1  进入./BL1目中make<br>make -C ./BL2 可实现makefile层次结构<br>-mkdir /aa 命令前面加上-，如果当前命令执行失败继续往下面执行</p></li><li><p>makefile中常用函数使用</p><p>#wildcard函数功能：找出当前目录下的所有.c文件<br>src=$(wildcard ./*.c)<br>#patsubst函数功能：将$(src)中所有.c文件替换成.o文件<br>obj=$(patsubst %.c, %.o, $(src))</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h4 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h4><ul><li><p>Makefile例子</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">obj = main.o add.o sub.o mul.o</span><br><span class="line">target = app</span><br><span class="line"><span class="comment">#makefile中自己维护的变量</span></span><br><span class="line">CC = gcc</span><br><span class="line">CFLAGS = -O0 -g -Wall</span><br><span class="line">LDFLAGS = -I -L</span><br><span class="line"><span class="variable">$(target)</span>:<span class="variable">$(obj)</span></span><br><span class="line"><span class="variable">$(CC)</span> <span class="variable">$^</span> -o <span class="variable">$@</span></span><br><span class="line"><span class="section">%.o:%.c</span></span><br><span class="line"><span class="variable">$(CC)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line">.PHONY : clean </span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">rm <span class="variable">$(target)</span> <span class="variable">$(obj)</span></span><br></pre></td></tr></table></figure></li></ul><ul><li><p>变量</p><p>$@：目标<br>$^：所有依赖<br>$&lt;：依赖列表中的第一个依赖<br>make -C ./BL1  进入./BL1目中make<br>make -C ./BL2 可实现makefile层次结构<br>-mkdir /aa 命令前面加上-，如果当前命令执行失败继续往下面执行</p></li><li><p>makefile中常用函数使用</p><p>#wildcard函数功能：找出当前目录下的所有.c文件<br>src=$(wildcard ./*.c)<br>#patsubst函数功能：将$(src)中所有.c文件替换成.o文件<br>obj=$(patsubst %.c, %.o, $(src))</p></li></ul>]]></content>
     
     <summary type="html">
     
@@ -31,7 +31,7 @@
       
         &lt;h4 id=&quot;Makefile&quot;&gt;&lt;a href=&quot;#Makefile&quot; class=&quot;headerlink&quot; title=&quot;Makefile&quot;&gt;&lt;/a&gt;Makefile&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Makefile例子&lt;/p&gt;
-&lt;p&gt;obj = main.o add.o 
+&lt;figure class=&quot;highlig
       
     
     </summary>
