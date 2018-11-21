@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="菜鸟记录">
 <meta property="og:description" content="1.静态库制作 命名规则：lib+库名+.a  制作步骤： 1)、生成.o文件 2)、将.o文件打包 ar rcs libxx.a xx.o3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx  静态库的优缺点： 优点：分布程序的时候，不需要提供对应的库、加载库的速度快 缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-21T04:41:11.646Z">
+<meta property="og:updated_time" content="2018-11-21T10:42:06.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="静态库动态库制作">
 <meta name="twitter:description" content="1.静态库制作 命名规则：lib+库名+.a  制作步骤： 1)、生成.o文件 2)、将.o文件打包 ar rcs libxx.a xx.o3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx  静态库的优缺点： 优点：分布程序的时候，不需要提供对应的库、加载库的速度快 缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编">
@@ -349,7 +349,7 @@
 <li><p>命名规则：lib+库名+.so</p>
 </li>
 <li><p>制作步骤：</p>
-<p>1)、生成位置无关的.o文件 gcc -fPIC -c <em>.c<br>2)、将.o文件打包 gcc -shared -o libxx.so </em>.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p>
+<p>1)、生成位置无关的.o文件 gcc -fPIC -c xx.c<br>2)、将.o文件打包 gcc -shared -o libxx.so xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p>
 </li>
 <li><p>解决动态库不能链接问题：<br>vi /etc/ld.so.conf<br>sudo ldconfig -v</p>
 </li>
@@ -513,7 +513,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

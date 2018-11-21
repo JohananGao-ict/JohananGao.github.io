@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-21T09:08:34.909Z</updated>
+  <updated>2018-11-21T11:15:45.996Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单例模式</title>
+    <link href="http://yoursite.com/2018/11/21/Makefile/"/>
+    <id>http://yoursite.com/2018/11/21/Makefile/</id>
+    <published>2018-11-21T11:15:18.481Z</published>
+    <updated>2018-11-21T11:15:45.996Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h4><ul><li><p>Makefile例子</p><p>obj = main.o add.o sub.o mul.o<br>target = app<br>#makefile中自己维护的变量<br>CC = gcc<br>CFLAGS = -O0 -g -Wall<br>LDFLAGS = -I -L<br>$(target):$(obj)</p><pre><code>$(CC) $^ -o $@</code></pre><p>%.o:%.c</p><pre><code>$(CC) -c $&lt; -o $@</code></pre><p>.PHONY : clean<br>clean:</p><pre><code>rm $(target) $(obj)</code></pre></li><li><p>变量</p><p>$@：目标<br>$^：所有依赖<br>$&lt;：依赖列表中的第一个依赖<br>make -C ./BL1  进入./BL1目中make<br>make -C ./BL2 可实现makefile层次结构<br>-mkdir /aa 命令前面加上-，如果当前命令执行失败继续往下面执行</p></li><li><p>makefile中常用函数使用</p><p>#wildcard函数功能：找出当前目录下的所有.c文件<br>src=$(wildcard ./*.c)<br>#patsubst函数功能：将$(src)中所有.c文件替换成.o文件<br>obj=$(patsubst %.c, %.o, $(src))</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Makefile&quot;&gt;&lt;a href=&quot;#Makefile&quot; class=&quot;headerlink&quot; title=&quot;Makefile&quot;&gt;&lt;/a&gt;Makefile&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Makefile例子&lt;/p&gt;
+&lt;p&gt;obj = main.o add.o 
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>gcc编译器gdb调试器</title>
@@ -44,9 +67,9 @@
     <link href="http://yoursite.com/2018/11/21/%E9%9D%99%E6%80%81%E5%BA%93%E5%8A%A8%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C/"/>
     <id>http://yoursite.com/2018/11/21/静态库动态库制作/</id>
     <published>2018-11-21T04:29:04.646Z</published>
-    <updated>2018-11-21T04:41:11.646Z</updated>
+    <updated>2018-11-21T10:42:06.836Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="1-静态库制作"><a href="#1-静态库制作" class="headerlink" title="1.静态库制作"></a>1.静态库制作</h4><ol><li><p>命名规则：lib+库名+.a</p></li><li><p>制作步骤：</p><p>1)、生成.o文件</p><p>2)、将.o文件打包 ar rcs libxx.a xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>静态库的优缺点：</p><p>优点：分布程序的时候，不需要提供对应的库、加载库的速度快</p><p>缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编译程序</p></li></ol><h4 id="2-动态库制作"><a href="#2-动态库制作" class="headerlink" title="2.动态库制作"></a>2.动态库制作</h4><ol><li><p>命名规则：lib+库名+.so</p></li><li><p>制作步骤：</p><p>1)、生成位置无关的.o文件 gcc -fPIC -c <em>.c<br>2)、将.o文件打包 gcc -shared -o libxx.so </em>.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>解决动态库不能链接问题：<br>vi /etc/ld.so.conf<br>sudo ldconfig -v</p></li><li><p>动态库的优缺点：<br>优点：执行程序体积小、动态库更新了，不需要重新编译程序，函数接口不变<br>缺点：发布程序的时候，需要将动态库提供给用户、动态库没有打包到应用程序中，加载速度相对较慢</p></li></ol><ul><li><p>nm命令列出目标文件的符号信息</p></li><li><p>ldd命令(list,dynamic,dependencies):列出动态库依赖关系</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h4 id="1-静态库制作"><a href="#1-静态库制作" class="headerlink" title="1.静态库制作"></a>1.静态库制作</h4><ol><li><p>命名规则：lib+库名+.a</p></li><li><p>制作步骤：</p><p>1)、生成.o文件</p><p>2)、将.o文件打包 ar rcs libxx.a xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>静态库的优缺点：</p><p>优点：分布程序的时候，不需要提供对应的库、加载库的速度快</p><p>缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编译程序</p></li></ol><h4 id="2-动态库制作"><a href="#2-动态库制作" class="headerlink" title="2.动态库制作"></a>2.动态库制作</h4><ol><li><p>命名规则：lib+库名+.so</p></li><li><p>制作步骤：</p><p>1)、生成位置无关的.o文件 gcc -fPIC -c xx.c<br>2)、将.o文件打包 gcc -shared -o libxx.so xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>解决动态库不能链接问题：<br>vi /etc/ld.so.conf<br>sudo ldconfig -v</p></li><li><p>动态库的优缺点：<br>优点：执行程序体积小、动态库更新了，不需要重新编译程序，函数接口不变<br>缺点：发布程序的时候，需要将动态库提供给用户、动态库没有打包到应用程序中，加载速度相对较慢</p></li></ol><ul><li><p>nm命令列出目标文件的符号信息</p></li><li><p>ldd命令(list,dynamic,dependencies):列出动态库依赖关系</p></li></ul>]]></content>
     
     <summary type="html">
     
@@ -440,27 +463,6 @@
         &lt;h2 id=&quot;必要条件&quot;&gt;&lt;a href=&quot;#必要条件&quot; class=&quot;headerlink&quot; title=&quot;必要条件&quot;&gt;&lt;/a&gt;必要条件&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;编程语言：java、kotlin等&lt;/li&gt;
 &lt;li&gt;开发环境：JDK、android studion推荐&lt;/l
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>域名解析所遇琐事</title>
-    <link href="http://yoursite.com/2018/03/12/%E5%9F%9F%E5%90%8D%E6%89%80%E9%81%87%E7%90%90%E4%BA%8B/"/>
-    <id>http://yoursite.com/2018/03/12/域名所遇琐事/</id>
-    <published>2018-03-12T13:28:04.950Z</published>
-    <updated>2018-03-12T13:44:09.834Z</updated>
-    
-    <content type="html"><![CDATA[<p>大家都知道买了域名之后要做的事就是<strong>域名解析、备案</strong>两件事。不解析的域名是不能够正常访问的因为DNS上没有记录；备案对于购买国外服务器是不需要备案也不能备案，若是国内服务器那是必须强制备案，否者是没有经营权的，注意备案之前也必须实名认证。</p><h1 id="域名解析："><a href="#域名解析：" class="headerlink" title="域名解析："></a>域名解析：</h1><ul><li>主机记录：’www‘表示<a href="http://www.xxx.com解析，‘@’表示主域名解析，‘*’表示泛型解析：xx.xx.com" target="_blank" rel="noopener">www.xxx.com解析，‘@’表示主域名解析，‘*’表示泛型解析：xx.xx.com</a></li><li>记录类型：’A’表示解析一个IPv4地址，’CNAME’表示指向另一个域名（别名），‘NS’表示指定用该dns服务器来解析域名，‘AAAA’表示解析一个IPv6地址</li></ul><p><strong> 注意：在阿里云购买域名会默认DNS服务器，这个最好别轻易修改 </strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;大家都知道买了域名之后要做的事就是&lt;strong&gt;域名解析、备案&lt;/strong&gt;两件事。不解析的域名是不能够正常访问的因为DNS上没有记录；备案对于购买国外服务器是不需要备案也不能备案，若是国内服务器那是必须强制备案，否者是没有经营权的，注意备案之前也必须实名认证。&lt;/p
       
     
     </summary>
