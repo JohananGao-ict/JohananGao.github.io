@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-21T11:20:37.265Z</updated>
+  <updated>2018-11-22T05:11:25.211Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vim操作</title>
+    <link href="http://yoursite.com/2018/11/22/vim%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2018/11/22/vim操作/</id>
+    <published>2018-11-22T05:10:46.882Z</published>
+    <updated>2018-11-22T05:11:25.211Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="创建文件："><a href="#创建文件：" class="headerlink" title="创建文件："></a>创建文件：</h4><p>vim +n abc 光标定在n行<br>vim +/im   光标定在有im字符第一个出现处</p><h4 id="快捷键："><a href="#快捷键：" class="headerlink" title="快捷键："></a>快捷键：</h4><p>ctrl+a 光标移动到命令行首<br>ctrl+e 光标移动到命令行尾<br>ctrl+u 从光标所在位置删除到行首</p><h4 id="复制删除粘贴："><a href="#复制删除粘贴：" class="headerlink" title="复制删除粘贴："></a>复制删除粘贴：</h4><p>nyy 复制光标所在的n行<br>ndd 剪切光标所在的n行<br>p 在光标所在行下方粘贴<br>P 在光标所在行上方粘贴</p><h4 id="搜索："><a href="#搜索：" class="headerlink" title="搜索："></a>搜索：</h4><p>/xxx 从上往下搜索<br>?xxx 从下往上搜索<br>n 表示继续查找<br>N 反向查找</p><h4 id="分屏："><a href="#分屏：" class="headerlink" title="分屏："></a>分屏：</h4><p>sp filename 水平分屏<br>vsp filename 垂直分屏<br>wqall 保存所有文件并退出<br>ctrl+w+w 切换光标</p><h4 id="替换："><a href="#替换：" class="headerlink" title="替换："></a>替换：</h4><p>n,n/s/old/new/g 替换n行至n行old为new<br>%s/from/to/g 替换所有行的内容      </p><h4 id="其余："><a href="#其余：" class="headerlink" title="其余："></a>其余：</h4><p>vim中按大写K可以man手册<br>gg 首行<br>G  末行<br>0 行首<br>$ 行末<br>ctrl+r 恢复上一步被撤销的操作<br>u 撤销上一步<br>w 保存<br>q 退出<br>！强制</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;创建文件：&quot;&gt;&lt;a href=&quot;#创建文件：&quot; class=&quot;headerlink&quot; title=&quot;创建文件：&quot;&gt;&lt;/a&gt;创建文件：&lt;/h4&gt;&lt;p&gt;vim +n abc 光标定在n行&lt;br&gt;vim +/im   光标定在有im字符第一个出现处&lt;/p&gt;
+&lt;h4 id
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Makefile</title>
@@ -440,29 +462,6 @@
       
         &lt;h2 id=&quot;make-project&quot;&gt;&lt;a href=&quot;#make-project&quot; class=&quot;headerlink&quot; title=&quot;make project&quot;&gt;&lt;/a&gt;make project&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Make Project：编译Project下所
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Android开发准备</title>
-    <link href="http://yoursite.com/2018/03/13/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87/"/>
-    <id>http://yoursite.com/2018/03/13/安卓开发准备/</id>
-    <published>2018-03-13T14:05:00.513Z</published>
-    <updated>2018-03-14T15:02:15.311Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="必要条件"><a href="#必要条件" class="headerlink" title="必要条件"></a>必要条件</h2><ul><li>编程语言：java、kotlin等</li><li>开发环境：JDK、android studion推荐</li></ul><p>曾经android风靡时，大家流行用eclipse+ADT+SDK方式开发安卓应用程序，自从google推出了android studio之后就停止了对ecplise的android相关插件的更新，还有android studio方便好用界面美观，因此赢得大家的青睐</p><h2 id="相关网站"><a href="#相关网站" class="headerlink" title="相关网站"></a>相关网站</h2><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html" target="_blank" rel="noopener">JDK官网</a><br><a href="http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio 中文社区</a><br><a href="https://developer.android.com" target="_blank" rel="noopener">android官方网站</a><br><em>注意：科学上网</em>  </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;必要条件&quot;&gt;&lt;a href=&quot;#必要条件&quot; class=&quot;headerlink&quot; title=&quot;必要条件&quot;&gt;&lt;/a&gt;必要条件&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;编程语言：java、kotlin等&lt;/li&gt;
-&lt;li&gt;开发环境：JDK、android studion推荐&lt;/l
       
     
     </summary>
