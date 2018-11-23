@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-22T05:15:57.544Z</updated>
+  <updated>2018-11-23T04:32:33.360Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/11/23/%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%EF%BC%9A/"/>
+    <id>http://yoursite.com/2018/11/23/内核模块开发基础：/</id>
+    <published>2018-11-23T06:36:07.901Z</published>
+    <updated>2018-11-23T04:32:33.360Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="模块开发常用的指令："><a href="#模块开发常用的指令：" class="headerlink" title="模块开发常用的指令："></a>模块开发常用的指令：</h4><p>insmod xx.ko插入模块<br>rmmod xx卸载模块<br>lsmod 列出显示所有模块<br>modprobe：(depmod)可载入指定的个别模块，或是载入一组相依赖的模块。<br>modinfo xx.ko 查看模块信息<br>tree -a 查看当前目录的整个树结构</p><h4 id="内核模块程序结构："><a href="#内核模块程序结构：" class="headerlink" title="内核模块程序结构："></a>内核模块程序结构：</h4><p>1) 模块加载函数(一般需要)    </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> __<span class="function">init <span class="title">xxx_init</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">module_init(xxx_init);</span><br></pre></td></tr></table></figure><p>2) 模块加载函数(一般需要)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> __<span class="function"><span class="built_in">exit</span> <span class="title">xxx_exit</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">module_exit(xxx_exit);</span><br></pre></td></tr></table></figure><p>3) 模块许可证声明(必须)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MODULE_LICENSE(<span class="string">"GPL"</span>);<span class="comment">// 描述模块的许可证</span></span><br><span class="line">MODULE_AUTHOR(<span class="string">"johanangao"</span>);     <span class="comment">// 描述模块的作者</span></span><br><span class="line">MODULE_DESCRIPTION(<span class="string">"module test"</span>); <span class="comment">// 描述模块的介绍信息</span></span><br><span class="line">MODULE_ALIAS(<span class="string">"alias xxx"</span>);<span class="comment">// 描述模块的别名信息</span></span><br></pre></td></tr></table></figure><p>4) 模块参数(可选)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module_param(bookName,charp,S_IRUGO);</span><br><span class="line"><span class="comment">//使用方法：insmod xx.ko bookName="TY6410"</span></span><br></pre></td></tr></table></figure><p>5) 模块导出符号(可选)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EXPORT_SYMBOL(符号名);</span><br><span class="line">EXPORT_GPL_SYMBOL(符号名);</span><br></pre></td></tr></table></figure><p>6) 模块信息(可选)</p><p>​     模块信息则是指模块的作者信息等(看第3条)</p><h4 id="模块的编译："><a href="#模块的编译：" class="headerlink" title="模块的编译："></a>模块的编译：</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ubuntu的内核源码树，如果要编译在ubuntu中安装的模块就打开这2个</span></span><br><span class="line"><span class="comment">#KERN_VER = $(shell uname -r)</span></span><br><span class="line"><span class="comment">#KERN_DIR = /lib/modules/$(KERN_VER)/build</span></span><br><span class="line"><span class="comment"># 开发板的linux内核的源码树目录</span></span><br><span class="line">KERN_DIR = /root/driver/kernel</span><br><span class="line">obj-m+= module_test.o</span><br><span class="line"><span class="section">all:</span></span><br><span class="line">make -C <span class="variable">$(KERN_DIR)</span> M=`pwd` modules </span><br><span class="line"><span class="section">cp:</span></span><br><span class="line">cp *.ko /root/porting_x210/rootfs/rootfs/driver_test</span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>: clean</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">make -C <span class="variable">$(KERN_DIR)</span> M=`pwd` modules clean</span><br></pre></td></tr></table></figure><h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>内核模块主要由加载、卸载函数功能函数等一系列声明组成。它可以被传入参数，也可以导出符号，供其它的模块使用。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;模块开发常用的指令：&quot;&gt;&lt;a href=&quot;#模块开发常用的指令：&quot; class=&quot;headerlink&quot; title=&quot;模块开发常用的指令：&quot;&gt;&lt;/a&gt;模块开发常用的指令：&lt;/h4&gt;&lt;p&gt;insmod xx.ko插入模块&lt;br&gt;rmmod xx卸载模块&lt;br&gt;ls
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>vim操作</title>
@@ -440,28 +461,6 @@
         &lt;h2 id=&quot;1-条件：&quot;&gt;&lt;a href=&quot;#1-条件：&quot; class=&quot;headerlink&quot; title=&quot;1.条件：&quot;&gt;&lt;/a&gt;1.条件：&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;安装python3.x，记得选择pip选项  &lt;/li&gt;
 &lt;li&gt;pip3 install sip(do
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>android studio编译</title>
-    <link href="http://yoursite.com/2018/03/14/%E5%AE%89%E5%8D%93%E7%BC%96%E8%AF%91/"/>
-    <id>http://yoursite.com/2018/03/14/安卓编译/</id>
-    <published>2018-03-14T14:46:25.192Z</published>
-    <updated>2018-03-14T15:21:32.942Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="make-project"><a href="#make-project" class="headerlink" title="make project"></a>make project</h2><ol><li>Make Project：编译Project下所有Module，一般是自上次编译后Project下有更新的文件，不生成apk</li><li>Make Selected Modules：编译指定的Module，一般是自上次编译后Module下有更新的文件，不生成apk<br>3.Clean Project：删除之前编译后的编译文件，并重新编译整个Project，比较花费时间，不生成apk</li><li>Rebuild Project：先执行Clean操作，删除之前编译的编译文件和可执行文件，然后重新编译新的编译文件，不生成apk，这里效果其实跟Clean Project是一致的，这个不知道Google搞什么鬼～～</li><li>Build APK：前面4个选项都是编译，没有生成apk文件，如果想生成apk，需要点击Build APK</li><li>Generate Signed APK：生成有签名的apk  </li></ol><p>推荐书籍：<a href="https://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8" target="_blank" rel="noopener">anroid实用指南</a><br>推荐一款编辑工具：<a href="https://www.sublimetext.com/" target="_blank" rel="noopener">sublime text3</a><br><a href="https://www.cnblogs.com/lianghe01/p/6259769.html" target="_blank" rel="noopener">致谢网友lianghe的贡献</a>  </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;make-project&quot;&gt;&lt;a href=&quot;#make-project&quot; class=&quot;headerlink&quot; title=&quot;make project&quot;&gt;&lt;/a&gt;make project&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;Make Project：编译Project下所
       
     
     </summary>

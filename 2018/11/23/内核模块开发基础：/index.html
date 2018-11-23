@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="C++标准库C++标准库并不是C++语言的一部分 C++标准库是由类库和函数库组成的集合 C++标准库中定义的类和对象都位于std命名空间中 C++标准库的头文件都不带.h后缀 C++标准库涵盖了C库的功能 C++标准库预定义了多数常用的数据结构bitset    set    cstdio deque    stack    cstring list    vector    cstdlib q">
+<meta name="description" content="模块开发常用的指令：insmod xx.ko插入模块rmmod xx卸载模块lsmod 列出显示所有模块modprobe：(depmod)可载入指定的个别模块，或是载入一组相依赖的模块。modinfo xx.ko 查看模块信息tree -a 查看当前目录的整个树结构 内核模块程序结构：1) 模块加载函数(一般需要)     1234static int __init xxx_init(void)&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++标准库">
-<meta property="og:url" content="http://yoursite.com/2018/06/19/C++标准库/index.html">
+<meta property="og:title" content="菜鸟记录">
+<meta property="og:url" content="http://yoursite.com/2018/11/23/内核模块开发基础：/index.html">
 <meta property="og:site_name" content="菜鸟记录">
-<meta property="og:description" content="C++标准库C++标准库并不是C++语言的一部分 C++标准库是由类库和函数库组成的集合 C++标准库中定义的类和对象都位于std命名空间中 C++标准库的头文件都不带.h后缀 C++标准库涵盖了C库的功能 C++标准库预定义了多数常用的数据结构bitset    set    cstdio deque    stack    cstring list    vector    cstdlib q">
+<meta property="og:description" content="模块开发常用的指令：insmod xx.ko插入模块rmmod xx卸载模块lsmod 列出显示所有模块modprobe：(depmod)可载入指定的个别模块，或是载入一组相依赖的模块。modinfo xx.ko 查看模块信息tree -a 查看当前目录的整个树结构 内核模块程序结构：1) 模块加载函数(一般需要)     1234static int __init xxx_init(void)&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-19T11:28:52.078Z">
+<meta property="og:updated_time" content="2018-11-23T04:32:33.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++标准库">
-<meta name="twitter:description" content="C++标准库C++标准库并不是C++语言的一部分 C++标准库是由类库和函数库组成的集合 C++标准库中定义的类和对象都位于std命名空间中 C++标准库的头文件都不带.h后缀 C++标准库涵盖了C库的功能 C++标准库预定义了多数常用的数据结构bitset    set    cstdio deque    stack    cstring list    vector    cstdlib q">
+<meta name="twitter:title" content="菜鸟记录">
+<meta name="twitter:description" content="模块开发常用的指令：insmod xx.ko插入模块rmmod xx卸载模块lsmod 列出显示所有模块modprobe：(depmod)可载入指定的个别模块，或是载入一组相依赖的模块。modinfo xx.ko 查看模块信息tree -a 查看当前目录的整个树结构 内核模块程序结构：1) 模块加载函数(一般需要)     1234static int __init xxx_init(void)&amp;">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/19/C++标准库/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/23/内核模块开发基础：/"/>
 
 
 
 
 
-  <title>C++标准库 | 菜鸟记录</title>
+  <title> | 菜鸟记录</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/C++标准库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/内核模块开发基础：/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Johanan Gao">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++标准库</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T19:26:00+08:00">
-                2018-06-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-23T14:36:07+08:00">
+                2018-11-23
               </time>
             
 
@@ -333,15 +333,21 @@
       
 
       
-        <h2 id="C-标准库"><a href="#C-标准库" class="headerlink" title="C++标准库"></a>C++标准库</h2><p>C++标准库并不是C++语言的一部分</p>
-<p>C++标准库是由类库和函数库组成的集合</p>
-<p>C++标准库中定义的类和对象都位于std命名空间中</p>
-<p>C++标准库的头文件都不带.h后缀</p>
-<p>C++标准库涵盖了C库的功能</p>
-<h2 id="C-标准库预定义了多数常用的数据结构"><a href="#C-标准库预定义了多数常用的数据结构" class="headerlink" title="C++标准库预定义了多数常用的数据结构"></a>C++标准库预定义了多数常用的数据结构</h2><p>bitset    set    cstdio</p>
-<p>deque    stack    cstring</p>
-<p>list    vector    cstdlib</p>
-<p>queue    map    cmath</p>
+        <h4 id="模块开发常用的指令："><a href="#模块开发常用的指令：" class="headerlink" title="模块开发常用的指令："></a>模块开发常用的指令：</h4><p>insmod xx.ko插入模块<br>rmmod xx卸载模块<br>lsmod 列出显示所有模块<br>modprobe：(depmod)可载入指定的个别模块，或是载入一组相依赖的模块。<br>modinfo xx.ko 查看模块信息<br>tree -a 查看当前目录的整个树结构</p>
+<h4 id="内核模块程序结构："><a href="#内核模块程序结构：" class="headerlink" title="内核模块程序结构："></a>内核模块程序结构：</h4><p>1) 模块加载函数(一般需要)    </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> __<span class="function">init <span class="title">xxx_init</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">module_init(xxx_init);</span><br></pre></td></tr></table></figure>
+<p>2) 模块加载函数(一般需要)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> __<span class="function"><span class="built_in">exit</span> <span class="title">xxx_exit</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">module_exit(xxx_exit);</span><br></pre></td></tr></table></figure>
+<p>3) 模块许可证声明(必须)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MODULE_LICENSE(<span class="string">"GPL"</span>);				<span class="comment">// 描述模块的许可证</span></span><br><span class="line">MODULE_AUTHOR(<span class="string">"johanangao"</span>);	     <span class="comment">// 描述模块的作者</span></span><br><span class="line">MODULE_DESCRIPTION(<span class="string">"module test"</span>);	 <span class="comment">// 描述模块的介绍信息</span></span><br><span class="line">MODULE_ALIAS(<span class="string">"alias xxx"</span>);			<span class="comment">// 描述模块的别名信息</span></span><br></pre></td></tr></table></figure>
+<p>4) 模块参数(可选)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module_param(bookName,charp,S_IRUGO);</span><br><span class="line"><span class="comment">//使用方法：insmod xx.ko bookName="TY6410"</span></span><br></pre></td></tr></table></figure>
+<p>5) 模块导出符号(可选)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EXPORT_SYMBOL(符号名);</span><br><span class="line">EXPORT_GPL_SYMBOL(符号名);</span><br></pre></td></tr></table></figure>
+<p>6) 模块信息(可选)</p>
+<p>​     模块信息则是指模块的作者信息等(看第3条)</p>
+<h4 id="模块的编译："><a href="#模块的编译：" class="headerlink" title="模块的编译："></a>模块的编译：</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ubuntu的内核源码树，如果要编译在ubuntu中安装的模块就打开这2个</span></span><br><span class="line"><span class="comment">#KERN_VER = $(shell uname -r)</span></span><br><span class="line"><span class="comment">#KERN_DIR = /lib/modules/$(KERN_VER)/build	</span></span><br><span class="line"><span class="comment"># 开发板的linux内核的源码树目录</span></span><br><span class="line">KERN_DIR = /root/driver/kernel</span><br><span class="line">obj-m	+= module_test.o</span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	make -C <span class="variable">$(KERN_DIR)</span> M=`pwd` modules </span><br><span class="line"><span class="section">cp:</span></span><br><span class="line">	cp *.ko /root/porting_x210/rootfs/rootfs/driver_test</span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>: clean	</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	make -C <span class="variable">$(KERN_DIR)</span> M=`pwd` modules clean</span><br></pre></td></tr></table></figure>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>内核模块主要由加载、卸载函数功能函数等一系列声明组成。它可以被传入参数，也可以导出符号，供其它的模块使用。</p>
 
       
     </div>
@@ -400,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/19/二阶构造函数/" rel="next" title="二阶构造函数">
-                <i class="fa fa-chevron-left"></i> 二阶构造函数
+              <a href="/2018/11/22/vim操作/" rel="next" title="vim操作">
+                <i class="fa fa-chevron-left"></i> vim操作
               </a>
             
           </div>
@@ -409,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/19/C++标准库string类型/" rel="prev" title="C++标准库string类型">
-                C++标准库string类型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-标准库"><span class="nav-number">1.</span> <span class="nav-text">C++标准库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-标准库预定义了多数常用的数据结构"><span class="nav-number">2.</span> <span class="nav-text">C++标准库预定义了多数常用的数据结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模块开发常用的指令："><span class="nav-number">1.</span> <span class="nav-text">模块开发常用的指令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内核模块程序结构："><span class="nav-number">2.</span> <span class="nav-text">内核模块程序结构：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块的编译："><span class="nav-number">3.</span> <span class="nav-text">模块的编译：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a></li></ol></div>
             
 
           </div>
