@@ -266,6 +266,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/二阶构造函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Johanan Gao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/19/二阶构造函数/" itemprop="url">二阶构造函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T19:15:35+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="工程开发中的构造过程可分为"><a href="#工程开发中的构造过程可分为" class="headerlink" title="工程开发中的构造过程可分为"></a>工程开发中的构造过程可分为</h2><ul>
+<li><p>资源无关的初始化操作：不可能出现异常情况的操作</p>
+</li>
+<li><p>需要使用系统资源的操作：可能出现异常情况，如：内存申请，访问文件</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TwoPhaseCons</span>&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	TwoPhaseCons()&#123;   <span class="comment">//第一阶段构造函数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">construct</span><span class="params">()</span></span>&#123; <span class="comment">//第二阶段构造函数</span></span><br><span class="line">	</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">static</span> TwoPhaseCons* <span class="title">newInstance</span><span class="params">()</span></span>; <span class="comment">//创建对象函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>完整实例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IntArray</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_length;</span><br><span class="line">    <span class="keyword">int</span>* m_pointer;</span><br><span class="line">    </span><br><span class="line">    IntArray(<span class="keyword">int</span> len)&#123;</span><br><span class="line">		m_length = len;    <span class="comment">//第一阶构造：资源无关初始化</span></span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">construct</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">bool</span> ret = <span class="literal">true</span>;</span><br><span class="line">		m_pointer = <span class="keyword">new</span> <span class="keyword">int</span>[m_length];   <span class="comment">//第二阶构造：申请系统资源</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>( m_pointer )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m_length; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				m_pointer[i] = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			ret = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">static</span> IntArray* <span class="title">NewInstance</span><span class="params">(<span class="keyword">int</span> length)</span></span>&#123;</span><br><span class="line">		IntArray* ret = <span class="keyword">new</span> IntArray(length);</span><br><span class="line">		<span class="keyword">if</span>( !(ret &amp;&amp; ret-&gt;construct()) ) </span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">delete</span> ret;</span><br><span class="line">			ret = <span class="number">0</span>;</span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">length</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> m_length;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span>&amp; value)</span></span>&#123;</span><br><span class="line">		<span class="keyword">bool</span> ret = (<span class="number">0</span> &lt;= index) &amp;&amp; (index &lt; length());</span><br><span class="line">		<span class="keyword">if</span>( ret )</span><br><span class="line">		&#123;</span><br><span class="line">			value = m_pointer[index];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> index ,<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">		<span class="keyword">bool</span> ret = (<span class="number">0</span> &lt;= index) &amp;&amp; (index &lt; length());</span><br><span class="line">		<span class="keyword">if</span>( ret )</span><br><span class="line">		&#123;</span><br><span class="line">			m_pointer[index] = value;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line">	&#125;</span><br><span class="line">    ~IntArray()&#123;</span><br><span class="line">		<span class="keyword">delete</span>[]m_pointer;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IntArray* a = IntArray::NewInstance(<span class="number">5</span>);    </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"a.length = %d\n"</span>, a-&gt;length());</span><br><span class="line">    </span><br><span class="line">    a-&gt;<span class="built_in">set</span>(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;a-&gt;length(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> v = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        a-&gt;get(i, v);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"a[%d] = %d\n"</span>, i, v);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span> a;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/回调函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1432,138 +1562,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/python开发QT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Johanan Gao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="菜鸟记录">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/01/python开发QT/" itemprop="url">python开发QT</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T20:50:51+08:00">
-                2018-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-条件："><a href="#1-条件：" class="headerlink" title="1.条件："></a>1.条件：</h2><ul>
-<li>安装python3.x，记得选择pip选项  </li>
-<li>pip3 install sip(dos中输入)</li>
-<li>pip3 install PyQt5  </li>
-</ul>
-<h2 id="2-打包exe"><a href="#2-打包exe" class="headerlink" title="2.打包exe"></a>2.打包exe</h2><ul>
-<li>安装pyinstaller：在cmd中输入pip install pyinstaller　　 </li>
-<li>打包命令：在cmd中输入pyinstaller -F -w <strong>xxx.py</strong><br>-F, –onefile 打包成一个exe文件。<br>-D, –onedir 创建一个目录，包含exe文件，但会依赖很多文件（默认选项）。<br>-c, –console, –nowindowed 使用控制台，无界面(默认)<br>-w, –windowed, –noconsole 使用窗口，无控制台<br>-i：是程序图标，app.py是你要打包的py文件  -i xx.icon   </li>
-</ul>
-<hr>
-<p>py -2 xx.py 选择python2.x版本<br>py -3 xx.py 选择python3.x版本<br>也可以在.py文件中指定#！ python3<br>运行py文件：python xx.py<br>进入python shell终端：输入python按回车<br>查看python版本：python –version</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1618,7 +1616,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1629,7 +1627,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1640,7 +1638,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

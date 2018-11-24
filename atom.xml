@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-23T06:43:59.050Z</updated>
+  <updated>2018-11-24T13:26:44.544Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux常用命令</title>
+    <link href="http://yoursite.com/2018/11/24/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2018/11/24/Linux常用命令/</id>
+    <published>2018-11-24T13:25:00.000Z</published>
+    <updated>2018-11-24T13:26:44.544Z</updated>
+    
+    <content type="html"><![CDATA[<p>chmod chown chgrp<br>chmod修改文件的权限<br>chown修改文件的所有者，例如：chown zhangsan:lisi filename<br>filename属于zhangsan用户lisi组<br>chgrp修改文件的所属组</p><p>查找和检索<br>文件属性查找：find<br>文件名：find / -name “搜索文件”<br>文件大小：find / -size +10M -size -100M(大于10M小于100M)<br>文件类型：find / -type d/f/b/c/s/p/l   f表示普通文件<br>文件内容查找：grep<br>格式：grep -r +“查找关键字”+路径<br>例如：grep -r “stdio.h” /home/aa </p><p>创建管道：mkfifo aa</p><p>用户管理<br>添加用户：<br>adduser<br>useradd -s /bin/bash -g robin -d /home/robin/ -m robin<br>设置密码：passwd robin<br>添加用户组：groupadd robin<br>删除用户：<br>deluser<br>userdel -r robin  连家目录一起删除</p><p>umask掩码：<br>如果用户创建的是目录，则默认所有权限都开放，为777<br>如果创建的是文件，默认没有x权限，那么就只有r、w两项，最大值为666<br>新建文件：666-022=644<br>新建目录：777-022=755<br>ulimit -a<br>查看linux端口被哪个进程占用<br>lsof -i：端口号<br>netstat -tunlp | grep 端口号 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;chmod chown chgrp&lt;br&gt;chmod修改文件的权限&lt;br&gt;chown修改文件的所有者，例如：chown zhangsan:lisi filename&lt;br&gt;filename属于zhangsan用户lisi组&lt;br&gt;chgrp修改文件的所属组&lt;/p&gt;
+&lt;p&gt;查
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="命令" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>内核模块开发基础</title>
@@ -438,29 +464,6 @@
       
       
         &lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.anaconda.com/download/&quot; target=&quot;_blank&quot; rel=&quot;noop
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python开发QT</title>
-    <link href="http://yoursite.com/2018/06/01/python%E5%BC%80%E5%8F%91QT/"/>
-    <id>http://yoursite.com/2018/06/01/python开发QT/</id>
-    <published>2018-06-01T12:50:51.006Z</published>
-    <updated>2018-06-02T15:48:12.263Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-条件："><a href="#1-条件：" class="headerlink" title="1.条件："></a>1.条件：</h2><ul><li>安装python3.x，记得选择pip选项  </li><li>pip3 install sip(dos中输入)</li><li>pip3 install PyQt5  </li></ul><h2 id="2-打包exe"><a href="#2-打包exe" class="headerlink" title="2.打包exe"></a>2.打包exe</h2><ul><li>安装pyinstaller：在cmd中输入pip install pyinstaller　　 </li><li>打包命令：在cmd中输入pyinstaller -F -w <strong>xxx.py</strong><br>-F, –onefile 打包成一个exe文件。<br>-D, –onedir 创建一个目录，包含exe文件，但会依赖很多文件（默认选项）。<br>-c, –console, –nowindowed 使用控制台，无界面(默认)<br>-w, –windowed, –noconsole 使用窗口，无控制台<br>-i：是程序图标，app.py是你要打包的py文件  -i xx.icon   </li></ul><hr><p>py -2 xx.py 选择python2.x版本<br>py -3 xx.py 选择python3.x版本<br>也可以在.py文件中指定#！ python3<br>运行py文件：python xx.py<br>进入python shell终端：输入python按回车<br>查看python版本：python –version</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1-条件：&quot;&gt;&lt;a href=&quot;#1-条件：&quot; class=&quot;headerlink&quot; title=&quot;1.条件：&quot;&gt;&lt;/a&gt;1.条件：&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;安装python3.x，记得选择pip选项  &lt;/li&gt;
-&lt;li&gt;pip3 install sip(do
       
     
     </summary>
