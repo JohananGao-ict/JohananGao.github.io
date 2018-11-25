@@ -365,6 +365,8 @@
 <p>git checkout –readme.txt这里有两种情况：<br>一种是还没有被放到暂存区，撤销修改就回到和版本库一模一样的状态<br>一种是添加到暂存区后，又作了修改，撤销修改就回到添加到暂存区后的状态</p>
 <p>git commit -m “xxx” 推送修改到本地git库中<br>git commit –amend 撤销上一次提交到版本库的操作 并将暂存区重新提交到版本库中<br>git log 查看 commit日志<br>git reset –hard commit_id </p>
 <p>提交代码：<br>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;<br>git pull origin master<br>取回远程主机某个分支的更新，再与本地的指定分支合并<br>git push &lt;远程主机名&gt; &lt;远程分支名&gt;<br>git push  origin master<br>把当前提交到git本地仓库的代码推送到远程主机的某个远程分之上</p>
+<p>git branch 显示本地分支，在当前分支的前面用”*”标记<br>git branch -a查看所有分支列表，包括本地和远程<br>git branch <newbranch>创建新分支<br>git branch -d xxx 删除本地分支<br>git branch -D xxx 强制删除本地分支<br>git checkout xx 切换分支</newbranch></p>
+<p>git merge xxx 合并指定分支到当前分支</p>
 <p><a href="https://www.jianshu.com/p/cbd5cd504f14" target="_blank" rel="noopener">参考</a></p>
 
           
