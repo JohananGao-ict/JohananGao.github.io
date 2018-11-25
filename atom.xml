@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-24T13:26:44.544Z</updated>
+  <updated>2018-11-25T02:53:44.475Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git操作</title>
+    <link href="http://yoursite.com/2018/11/25/git%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2018/11/25/git操作/</id>
+    <published>2018-11-25T02:53:00.000Z</published>
+    <updated>2018-11-25T02:53:44.475Z</updated>
+    
+    <content type="html"><![CDATA[<p>git clone <url> 克隆远程版本库<br>git init 初始化Git仓库<br>设置git用户名／邮箱<br>git config user.name ‘github用户名’<br>git config user.email ‘邮箱’<br>git conf –list 查看配置(包含：用户名和邮箱等)</url></p><p>git status 查看了当前状态发现修改过的文件<br>git add . 添加到本地git缓存区</p><p>git reset HEAD file<br>可以把暂存区的修改撤销掉，重新放回工作区</p><p>git checkout –readme.txt这里有两种情况：<br>一种是还没有被放到暂存区，撤销修改就回到和版本库一模一样的状态<br>一种是添加到暂存区后，又作了修改，撤销修改就回到添加到暂存区后的状态</p><p>git commit -m “xxx” 推送修改到本地git库中<br>git commit –amend 撤销上一次提交到版本库的操作 并将暂存区重新提交到版本库中<br>git log 查看 commit日志<br>git reset –hard commit_id </p><p>提交代码：<br>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;<br>git pull origin master<br>取回远程主机某个分支的更新，再与本地的指定分支合并<br>git push &lt;远程主机名&gt; &lt;远程分支名&gt;<br>git push  origin master<br>把当前提交到git本地仓库的代码推送到远程主机的某个远程分之上</p><p><a href="https://www.jianshu.com/p/cbd5cd504f14" target="_blank" rel="noopener">参考</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;git clone &lt;url&gt; 克隆远程版本库&lt;br&gt;git init 初始化Git仓库&lt;br&gt;设置git用户名／邮箱&lt;br&gt;git config user.name ‘github用户名’&lt;br&gt;git config user.email ‘邮箱’&lt;br&gt;git conf
+      
+    
+    </summary>
+    
+      <category term="版本控制" scheme="http://yoursite.com/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux常用命令</title>
@@ -443,27 +468,6 @@
 &lt;li&gt;无序列表：* xxx、+ xxx、- xxx&lt;/li&gt;
 &lt;li&gt;有序列表：1. xx  &lt;/li&gt;
 &lt;li&gt;插入图片：![xx](xxxx)&lt;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python环境搭建</title>
-    <link href="http://yoursite.com/2018/06/02/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2018/06/02/python环境搭建/</id>
-    <published>2018-06-02T15:35:27.986Z</published>
-    <updated>2018-06-02T15:56:50.049Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">anaconda</a><br><a href="https://www.jetbrains.com/pycharm/download/#section=windows%20Q%204" target="_blank" rel="noopener">pycharm</a>  </p><p>anaconda指的是一个开源的Python发行版本，装了anaconda就不需要装python了。  </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.anaconda.com/download/&quot; target=&quot;_blank&quot; rel=&quot;noop
       
     
     </summary>
