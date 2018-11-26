@@ -123,8 +123,8 @@
     <title>vim操作</title>
     <link href="http://yoursite.com/2018/11/22/vim%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2018/11/22/vim操作/</id>
-    <published>2018-11-22T05:10:46.882Z</published>
-    <updated>2018-11-22T05:15:57.544Z</updated>
+    <published>2018-11-22T02:53:00.000Z</published>
+    <updated>2018-11-26T13:52:06.214Z</updated>
     
     <content type="html"><![CDATA[<h4 id="创建文件："><a href="#创建文件：" class="headerlink" title="创建文件："></a>创建文件：</h4><p>vim +n abc 光标定在n行<br>vim +/im   光标定在有im字符第一个出现处</p><h4 id="快捷键："><a href="#快捷键：" class="headerlink" title="快捷键："></a>快捷键：</h4><p>ctrl+a 光标移动到命令行首<br>ctrl+e 光标移动到命令行尾<br>ctrl+u 从光标所在位置删除到行首</p><h4 id="复制删除粘贴："><a href="#复制删除粘贴：" class="headerlink" title="复制删除粘贴："></a>复制删除粘贴：</h4><p>nyy 复制光标所在的n行<br>ndd 剪切光标所在的n行<br>p 在光标所在行下方粘贴<br>P 在光标所在行上方粘贴</p><h4 id="搜索："><a href="#搜索：" class="headerlink" title="搜索："></a>搜索：</h4><p>/xxx 从上往下搜索<br>?xxx 从下往上搜索<br>n 表示继续查找<br>N 反向查找</p><h4 id="分屏："><a href="#分屏：" class="headerlink" title="分屏："></a>分屏：</h4><p>sp filename 水平分屏<br>vsp filename 垂直分屏<br>wqall 保存所有文件并退出<br>ctrl+w+w 切换光标</p><h4 id="替换："><a href="#替换：" class="headerlink" title="替换："></a>替换：</h4><p>n,n/s/old/new/g 替换n行至n行old为new<br>%s/from/to/g 替换所有行的内容      </p><h4 id="其余："><a href="#其余：" class="headerlink" title="其余："></a>其余：</h4><p>vim中按大写K可以man手册<br>gg 首行<br>G  末行<br>0 行首<br>$ 行末<br>ctrl+r 恢复上一步被撤销的操作<br>u 撤销上一步<br>w 保存<br>w filename 另存为<br>q 退出<br>！强制</p>]]></content>
     
@@ -138,6 +138,10 @@
     
     </summary>
     
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
     
   </entry>
   
@@ -145,8 +149,8 @@
     <title>Makefile</title>
     <link href="http://yoursite.com/2018/11/21/Makefile/"/>
     <id>http://yoursite.com/2018/11/21/Makefile/</id>
-    <published>2018-11-21T11:15:18.481Z</published>
-    <updated>2018-11-21T11:20:37.265Z</updated>
+    <published>2018-11-21T02:53:00.000Z</published>
+    <updated>2018-11-26T13:53:25.977Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h4><ul><li><p>Makefile例子</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">obj = main.o add.o sub.o mul.o</span><br><span class="line">target = app</span><br><span class="line"><span class="comment">#makefile中自己维护的变量</span></span><br><span class="line">CC = gcc</span><br><span class="line">CFLAGS = -O0 -g -Wall</span><br><span class="line">LDFLAGS = -I -L</span><br><span class="line"><span class="variable">$(target)</span>:<span class="variable">$(obj)</span></span><br><span class="line"><span class="variable">$(CC)</span> <span class="variable">$^</span> -o <span class="variable">$@</span></span><br><span class="line"><span class="section">%.o:%.c</span></span><br><span class="line"><span class="variable">$(CC)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line">.PHONY : clean </span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">rm <span class="variable">$(target)</span> <span class="variable">$(obj)</span></span><br></pre></td></tr></table></figure></li></ul><ul><li><p>变量</p><p>$@：目标<br>$^：所有依赖<br>$&lt;：依赖列表中的第一个依赖<br>make -C ./BL1  进入./BL1目中make<br>make -C ./BL2 可实现makefile层次结构<br>-mkdir /aa 命令前面加上-，如果当前命令执行失败继续往下面执行</p></li><li><p>makefile中常用函数使用</p><p>#wildcard函数功能：找出当前目录下的所有.c文件<br>src=$(wildcard ./*.c)<br>#patsubst函数功能：将$(src)中所有.c文件替换成.o文件<br>obj=$(patsubst %.c, %.o, $(src))</p></li></ul>]]></content>
     
@@ -161,15 +165,19 @@
     
     </summary>
     
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Makefile" scheme="http://yoursite.com/tags/Makefile/"/>
     
   </entry>
   
   <entry>
     <title>gcc编译器gdb调试器</title>
-    <link href="http://yoursite.com/2018/11/21/gcc%E7%BC%96%E8%AF%91%E5%99%A8gdb%E8%B0%83%E8%AF%95%E5%99%A8/"/>
-    <id>http://yoursite.com/2018/11/21/gcc编译器gdb调试器/</id>
-    <published>2018-11-21T09:07:31.837Z</published>
-    <updated>2018-11-21T09:08:34.909Z</updated>
+    <link href="http://yoursite.com/2018/11/20/gcc%E7%BC%96%E8%AF%91%E5%99%A8gdb%E8%B0%83%E8%AF%95%E5%99%A8/"/>
+    <id>http://yoursite.com/2018/11/20/gcc编译器gdb调试器/</id>
+    <published>2018-11-20T02:53:00.000Z</published>
+    <updated>2018-11-26T13:54:54.562Z</updated>
     
     <content type="html"><![CDATA[<h4 id="gcc编译器"><a href="#gcc编译器" class="headerlink" title="gcc编译器"></a>gcc编译器</h4><ul><li><p>gcc参数：</p><p>-E 预处理生成.i文件<br>-S 编译生成汇编文件.s文件<br>-c 汇编器生成目标文件.o文件<br>-I 指定头文件路径<br>-L 指定库路径<br>-l 指定库，例如：-lm指定libm.so(math库)<br>-D gcc编译时添加宏<br>-O0 优化级别0不优化，最高优化级别是3(0~3)<br>-Wall 输出警告信息<br>-g gdb调试</p></li></ul><h4 id="gdb调试"><a href="#gdb调试" class="headerlink" title="gdb调试"></a>gdb调试</h4><ul><li><p>gdb参数：</p><p>l 列出源码,例如：l main.c:0 从0行开始列出main.c的内容<br>b 设置断点，例如：break 2或者b 2 在第2行设置断点<br>i info，例如：i b列所设置的断点<br>start 开始执行，停在第一执行语句<br>r 重新开始运行文件run<br>n 单步调试next，也可不进入函数体内部<br>c 执行到下一个断点停止continue<br>s 进入到函数体内部step<br>finish 从函数体内部跳出<br>p i查看变量的值print<br>ptype i查看变量的类型<br>display i追踪变量i<br>info display查看变量编号<br>undisplay n取消追踪变量<br>u 跳出本次循环<br>d n删除断点，info break获取断点编号<br>set var i=10 设置某个变量值为10<br>q 退出gdb(quit)</p></li></ul>]]></content>
     
@@ -184,15 +192,19 @@
     
     </summary>
     
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="gcc" scheme="http://yoursite.com/tags/gcc/"/>
     
   </entry>
   
   <entry>
     <title>静态库动态库制作</title>
-    <link href="http://yoursite.com/2018/11/21/%E9%9D%99%E6%80%81%E5%BA%93%E5%8A%A8%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C/"/>
-    <id>http://yoursite.com/2018/11/21/静态库动态库制作/</id>
-    <published>2018-11-21T04:29:04.646Z</published>
-    <updated>2018-11-21T10:42:06.836Z</updated>
+    <link href="http://yoursite.com/2018/11/19/%E9%9D%99%E6%80%81%E5%BA%93%E5%8A%A8%E6%80%81%E5%BA%93%E5%88%B6%E4%BD%9C/"/>
+    <id>http://yoursite.com/2018/11/19/静态库动态库制作/</id>
+    <published>2018-11-19T02:53:00.000Z</published>
+    <updated>2018-11-26T13:55:59.802Z</updated>
     
     <content type="html"><![CDATA[<h4 id="1-静态库制作"><a href="#1-静态库制作" class="headerlink" title="1.静态库制作"></a>1.静态库制作</h4><ol><li><p>命名规则：lib+库名+.a</p></li><li><p>制作步骤：</p><p>1)、生成.o文件</p><p>2)、将.o文件打包 ar rcs libxx.a xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>静态库的优缺点：</p><p>优点：分布程序的时候，不需要提供对应的库、加载库的速度快</p><p>缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编译程序</p></li></ol><h4 id="2-动态库制作"><a href="#2-动态库制作" class="headerlink" title="2.动态库制作"></a>2.动态库制作</h4><ol><li><p>命名规则：lib+库名+.so</p></li><li><p>制作步骤：</p><p>1)、生成位置无关的.o文件 gcc -fPIC -c xx.c<br>2)、将.o文件打包 gcc -shared -o libxx.so xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p></li><li><p>解决动态库不能链接问题：<br>vi /etc/ld.so.conf<br>sudo ldconfig -v</p></li><li><p>动态库的优缺点：<br>优点：执行程序体积小、动态库更新了，不需要重新编译程序，函数接口不变<br>缺点：发布程序的时候，需要将动态库提供给用户、动态库没有打包到应用程序中，加载速度相对较慢</p></li></ol><ul><li><p>nm命令列出目标文件的符号信息</p></li><li><p>ldd命令(list,dynamic,dependencies):列出动态库依赖关系</p></li></ul>]]></content>
     
@@ -208,6 +220,10 @@
     
     </summary>
     
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
