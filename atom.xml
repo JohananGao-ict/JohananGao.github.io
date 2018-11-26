@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-25T03:31:43.093Z</updated>
+  <updated>2018-11-26T13:42:20.994Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内核最后阶段启动的三个进程</title>
+    <link href="http://yoursite.com/2018/11/26/%E5%86%85%E6%A0%B8%E6%9C%80%E5%90%8E%E9%98%B6%E6%AE%B5%E5%90%AF%E5%8A%A8%E7%9A%84%E4%B8%89%E4%B8%AA%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/11/26/内核最后阶段启动的三个进程/</id>
+    <published>2018-11-26T13:40:00.000Z</published>
+    <updated>2018-11-26T13:42:20.994Z</updated>
+    
+    <content type="html"><![CDATA[<p>在内核启动的最后阶段启动了三个进程<br>进程0：进程0其实就是刚才讲过的idle进程，叫空闲进程，也就是死循环。</p><p>进程1：kernel_init函数就是进程1，这个进程被称为init进程。</p><p>进程2：kthreadd函数就是进程2，这个进程是linux内核的守护进程。这个进程是用来保证linux内核自己本身能正常工作的。</p><p>在嵌入式操作系统中一般会指定/linuxrc为init进程。</p><p><a href="https://www.toutiao.com/a6621410454306554376/?tt_from=mobile_qq&amp;utm_campaign=client_share&amp;timestamp=1543239041&amp;app=news_article&amp;utm_source=mobile_qq&amp;iid=25942348816&amp;utm_medium=toutiao_android&amp;group_id=6621410454306554376" target="_blank" rel="noopener">参考</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在内核启动的最后阶段启动了三个进程&lt;br&gt;进程0：进程0其实就是刚才讲过的idle进程，叫空闲进程，也就是死循环。&lt;/p&gt;
+&lt;p&gt;进程1：kernel_init函数就是进程1，这个进程被称为init进程。&lt;/p&gt;
+&lt;p&gt;进程2：kthreadd函数就是进程2，这个进程是li
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="内核" scheme="http://yoursite.com/tags/%E5%86%85%E6%A0%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>git操作</title>
@@ -71,8 +98,8 @@
     <title>内核模块开发基础</title>
     <link href="http://yoursite.com/2018/11/23/%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%EF%BC%9A/"/>
     <id>http://yoursite.com/2018/11/23/内核模块开发基础：/</id>
-    <published>2018-11-23T06:36:07.901Z</published>
-    <updated>2018-11-23T06:43:59.050Z</updated>
+    <published>2018-11-23T13:40:00.000Z</published>
+    <updated>2018-11-26T13:43:39.276Z</updated>
     
     <content type="html"><![CDATA[<h4 id="模块开发常用的指令："><a href="#模块开发常用的指令：" class="headerlink" title="模块开发常用的指令："></a>模块开发常用的指令：</h4><p>insmod xx.ko插入模块<br>rmmod xx卸载模块<br>lsmod 列出显示所有模块<br>modprobe：(depmod)可载入指定的个别模块，或是载入一组相依赖的模块。<br>modinfo xx.ko 查看模块信息<br>tree -a 查看当前目录的整个树结构</p><h4 id="内核模块程序结构："><a href="#内核模块程序结构：" class="headerlink" title="内核模块程序结构："></a>内核模块程序结构：</h4><p>1) 模块加载函数(一般需要)    </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> __<span class="function">init <span class="title">xxx_init</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">module_init(xxx_init);</span><br></pre></td></tr></table></figure><p>2) 模块加载函数(一般需要)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> __<span class="function"><span class="built_in">exit</span> <span class="title">xxx_exit</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">module_exit(xxx_exit);</span><br></pre></td></tr></table></figure><p>3) 模块许可证声明(必须)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MODULE_LICENSE(<span class="string">"GPL"</span>);<span class="comment">// 描述模块的许可证</span></span><br><span class="line">MODULE_AUTHOR(<span class="string">"johanangao"</span>);     <span class="comment">// 描述模块的作者</span></span><br><span class="line">MODULE_DESCRIPTION(<span class="string">"module test"</span>); <span class="comment">// 描述模块的介绍信息</span></span><br><span class="line">MODULE_ALIAS(<span class="string">"alias xxx"</span>);<span class="comment">// 描述模块的别名信息</span></span><br></pre></td></tr></table></figure><p>4) 模块参数(可选)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module_param(bookName,charp,S_IRUGO);</span><br><span class="line"><span class="comment">//使用方法：insmod xx.ko bookName="TY6410"</span></span><br></pre></td></tr></table></figure><p>5) 模块导出符号(可选)</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EXPORT_SYMBOL(符号名);</span><br><span class="line">EXPORT_GPL_SYMBOL(符号名);</span><br></pre></td></tr></table></figure><p>6) 模块信息(可选)</p><p>​     模块信息则是指模块的作者信息等(看第3条)</p><h4 id="模块的编译："><a href="#模块的编译：" class="headerlink" title="模块的编译："></a>模块的编译：</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ubuntu的内核源码树，如果要编译在ubuntu中安装的模块就打开这2个</span></span><br><span class="line"><span class="comment">#KERN_VER = $(shell uname -r)</span></span><br><span class="line"><span class="comment">#KERN_DIR = /lib/modules/$(KERN_VER)/build</span></span><br><span class="line"><span class="comment"># 开发板的linux内核的源码树目录</span></span><br><span class="line">KERN_DIR = /root/driver/kernel</span><br><span class="line">obj-m+= module_test.o</span><br><span class="line"><span class="section">all:</span></span><br><span class="line">make -C <span class="variable">$(KERN_DIR)</span> M=`pwd` modules </span><br><span class="line"><span class="section">cp:</span></span><br><span class="line">cp *.ko /root/porting_x210/rootfs/rootfs/driver_test</span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>: clean</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">make -C <span class="variable">$(KERN_DIR)</span> M=`pwd` modules clean</span><br></pre></td></tr></table></figure><h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>内核模块主要由加载、卸载函数功能函数等一系列声明组成。它可以被传入参数，也可以导出符号，供其它的模块使用。</p>]]></content>
     
@@ -85,6 +112,10 @@
     
     </summary>
     
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="内核" scheme="http://yoursite.com/tags/%E5%86%85%E6%A0%B8/"/>
     
   </entry>
   
@@ -441,33 +472,6 @@
       
         &lt;p&gt;MinGW是一套集成编译器，mingw32-make是mingw的make工具，mingw32-gcc是mingw的c编译器, mingw32-g++是mingw的c++编译器。&lt;/p&gt;
 &lt;p&gt;MinGW官方网址：&lt;a href=&quot;http://www.mingw.org&quot;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown语法</title>
-    <link href="http://yoursite.com/2018/06/04/Markdown%E8%AF%AD%E6%B3%95/"/>
-    <id>http://yoursite.com/2018/06/04/Markdown语法/</id>
-    <published>2018-06-04T12:16:11.781Z</published>
-    <updated>2018-06-04T12:20:47.165Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>标题：#</li><li>加粗：**xx**</li><li>斜体：_xxx_或者*sss*包括</li><li>无序列表：* xxx、+ xxx、- xxx</li><li>有序列表：1. xx  </li><li>插入图片：![xx](xxxx)</li><li>链接：[xx](xxxx) </li><li>分割线： —或者***</li><li>引言：> xx</li><li>行内代码块：`xxxxx`（反引号就是ESC键下）</li><li>段落代码块：每行4空格、```xxxx```、列表下缩进两个tab</li></ol><p>参考博文：<a href="https://www.jianshu.com/p/20e82ddb37cb" target="_blank" rel="noopener">Markdown 简易入门教程</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;标题：#&lt;/li&gt;
-&lt;li&gt;加粗：**xx**&lt;/li&gt;
-&lt;li&gt;斜体：_xxx_或者*sss*包括&lt;/li&gt;
-&lt;li&gt;无序列表：* xxx、+ xxx、- xxx&lt;/li&gt;
-&lt;li&gt;有序列表：1. xx  &lt;/li&gt;
-&lt;li&gt;插入图片：![xx](xxxx)&lt;
       
     
     </summary>
