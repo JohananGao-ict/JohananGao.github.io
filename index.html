@@ -266,6 +266,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/进程间通信IPC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Johanan Gao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/27/进程间通信IPC/" itemprop="url">进程间通信IPC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-27T20:08:00+08:00">
+                2018-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>进程的五种状态：<br>初始态、就绪态、运行态、挂起态、终止态</p>
+<p>fork()创建子进程<br>父进程成功，fork()返回子进程的PID<br>子进程成功，fork()返回0<br>getpid() 获取进程ID<br>getppid()获取父进程ID<br>父子间进程不能通过全局变量共享内存，线程是可以的<br>exec函数族：需要注意的是exec并不是1个函数, 其实它只是一组函数的统称, 它包括下面6个函数<br>execl、 execlp、 execle、execv、 execvp、 execve<br>exec函数族重新替换.txt中的代码，执行exec中的代码</p>
+<p>孤儿进程<br>爹先死，孩子还活着，孩子叫孤儿进程<br>孤儿被init进程领养，init进程变成孤儿进程的父亲<br>为了释放子进程占用的系统资源<br>进程结束之后，能够释放用户区空间<br>释放不了pcb，必须由父进程释放</p>
+<p>僵尸进程<br>孩子死了，爹还活着，爹不去释放子进程的pcb，孩子就变成了僵尸进程<br>是一个死了的进程<br>回收进程：<br>wait() 阻塞函数<br>waitpid()<br>WIFEXITED(status);为非0进程正常结束<br>WEXITSTATUS(status) status为子进程退出状态<br>WIFSIGNALED(status);为非0进程异常终止<br>WTERMSIG(status) </p>
+<p>进程间通信IPC<br>常用几种方式：<br>管道-简单<br>信号-系统开销小<br>信号量<br>消息队列<br>共享映射区-有无血缘关系的进程间通信都可以<br>本地套接字-稳定</p>
+<p>匿名管道：pipe<br>本质：内核缓冲区、伪文件不占用磁盘空间<br>特点：<br>两部分：读端，写端对应两个文件描述符<br>数据写端流入，读端流出<br>操作管道的进程被销毁之后，管道自动被释放了<br>管道默认是阻塞的<br>使用场景：只能血缘关系进程间通信<br>管道的原理：<br>内部实现方式：队列 环形队列 fifo<br>缓冲区：默认4K<br>管道的局限性：<br>队列：数据只能读取一次，不能重复读取<br>半双工<br>设置读端为非阻塞：<br>int flags = fcntl(fd[0],F_GETFL);<br>flags |= O_NONBLOCK;<br>fcntl(fd[0],F_SETFL,flags);</p>
+<p>有名管道：fifo<br>特点：在磁盘上有这样一个文件p<br>伪文件，在磁盘大小永远为0<br>在内核中有一个对应的缓冲区<br>半双工的通信方式<br>使用场景：无血缘关系进程间通信<br>创建方式：mkfifo 管道名</p>
+<p>内存映射:mmap<br>mmap()建立内存映射区<br>munmap()释放内存映射区<br>匿名内存映射区(父子间进程通信)</p>
+<p>信号：signal<br>特点：简单，携带的信息量少，使用在某个特定的场景中<br>信号的状态：<br>产生：键盘、命令kill、系统函数、定时器、段错误，除0错误<br>未决状态：没有被处理<br>递达：信号被处理了</p>
+<p>信号处理：忽略、捕捉、执行默认动作<br>概念：阻塞信号集、未决信号集<br>相关函数：<br>kill() 发送信号给指定进程<br>raise()自己给自己发信号<br>abort()给自己发送给异常终止信号<br>闹钟(定时器)：<br>alarm()设置定时器(每个进程只有一个定时器)<br>settimer()定时器，并实现周期性定时<br>自定义信号集<br>sigemptyset()将set集合置空<br>sigfillset()将所有信号加入set集合<br>sigaddset()将signo信号加入到set集合<br>sigmember()判断信号是否存在<br>sigpending() 读取当前进程的未决信号集<br>sigprocmask()自定义信号集设置给内核阻塞信号集<br>signal()注册捕捉函数<br>sigaction()捕捉信号</p>
+<p>守护进程：<br>一般步骤：<br>先fork,夫进程死，子进程执行创建会话操作<br>setsid()设置会话组<br>改变当前工作目录chdir<br>重设文件掩码umask(0)<br>关闭文件描述符0,1,2<br>执行核心工作</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/内核最后阶段启动的三个进程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1612,132 +1766,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/new关键字与命名空间/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Johanan Gao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="菜鸟记录">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/20/new关键字与命名空间/" itemprop="url">new关键字与命名空间</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T20:03:21+08:00">
-                2018-06-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="new关键字的初始化"><a href="#new关键字的初始化" class="headerlink" title="new关键字的初始化"></a>new关键字的初始化</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* pi = <span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">1</span>);            <span class="comment">//并初始化</span></span><br><span class="line"><span class="keyword">int</span>* a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;  <span class="comment">//数组申请并初始化</span></span><br></pre></td></tr></table></figure>
-<h2 id="C-命名空间的使用"><a href="#C-命名空间的使用" class="headerlink" title="C++命名空间的使用"></a>C++命名空间的使用</h2><p>-使用整个命名空间：using namespace name；</p>
-<p>-使用命名空间中的变量：using name::variable;</p>
-<p>-使用默认命名空间中的变量: ::variable</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">namespace</span> First</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> Second</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">namespace</span> Internal</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">P</span></span></span><br><span class="line"><span class="class">        &#123;</span></span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="keyword">int</span> y;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> First;</span><br><span class="line">    <span class="keyword">using</span> Second::Internal::P;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"First::i = %d\n"</span>, i);            <span class="comment">// 0</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Second::i = %d\n"</span>, Second::i);   <span class="comment">// 1</span></span><br><span class="line">    P p = &#123;<span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"p.x = %d\n"</span>, p.x);              <span class="comment">//  2</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"p.y = %d\n"</span>, p.y);              <span class="comment">//  3</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1792,7 +1820,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

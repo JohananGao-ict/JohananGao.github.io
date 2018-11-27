@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="C语言," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="git clone  克隆远程版本库git init 初始化Git仓库设置git用户名／邮箱git config user.name ‘github用户名’git config user.email ‘邮箱’git conf –list 查看配置(包含：用户名和邮箱等) git status 查看了当前状态发现修改过的文件git add . 添加到本地git缓存区 git reset HEAD f">
-<meta name="keywords" content="git">
+<meta name="description" content="进程的五种状态：初始态、就绪态、运行态、挂起态、终止态 fork()创建子进程父进程成功，fork()返回子进程的PID子进程成功，fork()返回0getpid() 获取进程IDgetppid()获取父进程ID父子间进程不能通过全局变量共享内存，线程是可以的exec函数族：需要注意的是exec并不是1个函数, 其实它只是一组函数的统称, 它包括下面6个函数execl、 execlp、 execl">
+<meta name="keywords" content="C语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git操作">
-<meta property="og:url" content="http://yoursite.com/2018/11/25/git操作/index.html">
+<meta property="og:title" content="进程间通信IPC">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/进程间通信IPC/index.html">
 <meta property="og:site_name" content="菜鸟记录">
-<meta property="og:description" content="git clone  克隆远程版本库git init 初始化Git仓库设置git用户名／邮箱git config user.name ‘github用户名’git config user.email ‘邮箱’git conf –list 查看配置(包含：用户名和邮箱等) git status 查看了当前状态发现修改过的文件git add . 添加到本地git缓存区 git reset HEAD f">
+<meta property="og:description" content="进程的五种状态：初始态、就绪态、运行态、挂起态、终止态 fork()创建子进程父进程成功，fork()返回子进程的PID子进程成功，fork()返回0getpid() 获取进程IDgetppid()获取父进程ID父子间进程不能通过全局变量共享内存，线程是可以的exec函数族：需要注意的是exec并不是1个函数, 其实它只是一组函数的统称, 它包括下面6个函数execl、 execlp、 execl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-25T03:31:43.093Z">
+<meta property="og:updated_time" content="2018-11-27T12:09:08.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git操作">
-<meta name="twitter:description" content="git clone  克隆远程版本库git init 初始化Git仓库设置git用户名／邮箱git config user.name ‘github用户名’git config user.email ‘邮箱’git conf –list 查看配置(包含：用户名和邮箱等) git status 查看了当前状态发现修改过的文件git add . 添加到本地git缓存区 git reset HEAD f">
+<meta name="twitter:title" content="进程间通信IPC">
+<meta name="twitter:description" content="进程的五种状态：初始态、就绪态、运行态、挂起态、终止态 fork()创建子进程父进程成功，fork()返回子进程的PID子进程成功，fork()返回0getpid() 获取进程IDgetppid()获取父进程ID父子间进程不能通过全局变量共享内存，线程是可以的exec函数族：需要注意的是exec并不是1个函数, 其实它只是一组函数的统称, 它包括下面6个函数execl、 execlp、 execl">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/25/git操作/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/27/进程间通信IPC/"/>
 
 
 
 
 
-  <title>git操作 | 菜鸟记录</title>
+  <title>进程间通信IPC | 菜鸟记录</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/25/git操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/进程间通信IPC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Johanan Gao">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git操作</h1>
+          <h1 class="post-title" itemprop="name headline">进程间通信IPC</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-25T10:53:00+08:00">
-                2018-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-27T20:08:00+08:00">
+                2018-11-27
               </time>
             
 
@@ -319,8 +319,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/版本控制/" itemprop="url" rel="index">
-                    <span itemprop="name">版本控制</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -356,15 +356,17 @@
       
 
       
-        <p>git clone <url> 克隆远程版本库<br>git init 初始化Git仓库<br>设置git用户名／邮箱<br>git config user.name ‘github用户名’<br>git config user.email ‘邮箱’<br>git conf –list 查看配置(包含：用户名和邮箱等)</url></p>
-<p>git status 查看了当前状态发现修改过的文件<br>git add . 添加到本地git缓存区</p>
-<p>git reset HEAD file<br>可以把暂存区的修改撤销掉，重新放回工作区</p>
-<p>git checkout –readme.txt这里有两种情况：<br>一种是还没有被放到暂存区，撤销修改就回到和版本库一模一样的状态<br>一种是添加到暂存区后，又作了修改，撤销修改就回到添加到暂存区后的状态</p>
-<p>git commit -m “xxx” 推送修改到本地git库中<br>git commit –amend 撤销上一次提交到版本库的操作 并将暂存区重新提交到版本库中<br>git log 查看 commit日志<br>git reset –hard commit_id </p>
-<p>提交代码：<br>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;<br>git pull origin master<br>取回远程主机某个分支的更新，再与本地的指定分支合并<br>git push &lt;远程主机名&gt; &lt;远程分支名&gt;<br>git push  origin master<br>把当前提交到git本地仓库的代码推送到远程主机的某个远程分之上</p>
-<p>git branch 显示本地分支，在当前分支的前面用”*”标记<br>git branch -a查看所有分支列表，包括本地和远程<br>git branch <newbranch>创建新分支<br>git branch -d xxx 删除本地分支<br>git branch -D xxx 强制删除本地分支<br>git checkout xx 切换分支</newbranch></p>
-<p>git merge xxx 合并指定分支到当前分支</p>
-<p><a href="https://www.jianshu.com/p/cbd5cd504f14" target="_blank" rel="noopener">参考</a></p>
+        <p>进程的五种状态：<br>初始态、就绪态、运行态、挂起态、终止态</p>
+<p>fork()创建子进程<br>父进程成功，fork()返回子进程的PID<br>子进程成功，fork()返回0<br>getpid() 获取进程ID<br>getppid()获取父进程ID<br>父子间进程不能通过全局变量共享内存，线程是可以的<br>exec函数族：需要注意的是exec并不是1个函数, 其实它只是一组函数的统称, 它包括下面6个函数<br>execl、 execlp、 execle、execv、 execvp、 execve<br>exec函数族重新替换.txt中的代码，执行exec中的代码</p>
+<p>孤儿进程<br>爹先死，孩子还活着，孩子叫孤儿进程<br>孤儿被init进程领养，init进程变成孤儿进程的父亲<br>为了释放子进程占用的系统资源<br>进程结束之后，能够释放用户区空间<br>释放不了pcb，必须由父进程释放</p>
+<p>僵尸进程<br>孩子死了，爹还活着，爹不去释放子进程的pcb，孩子就变成了僵尸进程<br>是一个死了的进程<br>回收进程：<br>wait() 阻塞函数<br>waitpid()<br>WIFEXITED(status);为非0进程正常结束<br>WEXITSTATUS(status) status为子进程退出状态<br>WIFSIGNALED(status);为非0进程异常终止<br>WTERMSIG(status) </p>
+<p>进程间通信IPC<br>常用几种方式：<br>管道-简单<br>信号-系统开销小<br>信号量<br>消息队列<br>共享映射区-有无血缘关系的进程间通信都可以<br>本地套接字-稳定</p>
+<p>匿名管道：pipe<br>本质：内核缓冲区、伪文件不占用磁盘空间<br>特点：<br>两部分：读端，写端对应两个文件描述符<br>数据写端流入，读端流出<br>操作管道的进程被销毁之后，管道自动被释放了<br>管道默认是阻塞的<br>使用场景：只能血缘关系进程间通信<br>管道的原理：<br>内部实现方式：队列 环形队列 fifo<br>缓冲区：默认4K<br>管道的局限性：<br>队列：数据只能读取一次，不能重复读取<br>半双工<br>设置读端为非阻塞：<br>int flags = fcntl(fd[0],F_GETFL);<br>flags |= O_NONBLOCK;<br>fcntl(fd[0],F_SETFL,flags);</p>
+<p>有名管道：fifo<br>特点：在磁盘上有这样一个文件p<br>伪文件，在磁盘大小永远为0<br>在内核中有一个对应的缓冲区<br>半双工的通信方式<br>使用场景：无血缘关系进程间通信<br>创建方式：mkfifo 管道名</p>
+<p>内存映射:mmap<br>mmap()建立内存映射区<br>munmap()释放内存映射区<br>匿名内存映射区(父子间进程通信)</p>
+<p>信号：signal<br>特点：简单，携带的信息量少，使用在某个特定的场景中<br>信号的状态：<br>产生：键盘、命令kill、系统函数、定时器、段错误，除0错误<br>未决状态：没有被处理<br>递达：信号被处理了</p>
+<p>信号处理：忽略、捕捉、执行默认动作<br>概念：阻塞信号集、未决信号集<br>相关函数：<br>kill() 发送信号给指定进程<br>raise()自己给自己发信号<br>abort()给自己发送给异常终止信号<br>闹钟(定时器)：<br>alarm()设置定时器(每个进程只有一个定时器)<br>settimer()定时器，并实现周期性定时<br>自定义信号集<br>sigemptyset()将set集合置空<br>sigfillset()将所有信号加入set集合<br>sigaddset()将signo信号加入到set集合<br>sigmember()判断信号是否存在<br>sigpending() 读取当前进程的未决信号集<br>sigprocmask()自定义信号集设置给内核阻塞信号集<br>signal()注册捕捉函数<br>sigaction()捕捉信号</p>
+<p>守护进程：<br>一般步骤：<br>先fork,夫进程死，子进程执行创建会话操作<br>setsid()设置会话组<br>改变当前工作目录chdir<br>重设文件掩码umask(0)<br>关闭文件描述符0,1,2<br>执行核心工作</p>
 
       
     </div>
@@ -416,7 +418,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/C语言/" rel="tag"># C语言</a>
           
         </div>
       
@@ -429,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/24/Linux常用命令/" rel="next" title="Linux常用命令">
-                <i class="fa fa-chevron-left"></i> Linux常用命令
+              <a href="/2018/11/26/内核最后阶段启动的三个进程/" rel="next" title="内核最后阶段启动的三个进程">
+                <i class="fa fa-chevron-left"></i> 内核最后阶段启动的三个进程
               </a>
             
           </div>
@@ -438,10 +440,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/26/内核最后阶段启动的三个进程/" rel="prev" title="内核最后阶段启动的三个进程">
-                内核最后阶段启动的三个进程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
