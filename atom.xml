@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-27T12:09:08.155Z</updated>
+  <updated>2018-11-29T07:16:33.429Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>线程同步</title>
+    <link href="http://yoursite.com/2018/11/28/%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5/"/>
+    <id>http://yoursite.com/2018/11/28/线程同步/</id>
+    <published>2018-11-28T07:16:00.000Z</published>
+    <updated>2018-11-29T07:16:33.429Z</updated>
+    
+    <content type="html"><![CDATA[<p>线程：<br>创建线程之后，地址空间没有变化<br>进程退出成了线程-主线程<br>创建出的子线程和主线程共用地址空间<br>主线程和子线程有各自独立的pcb<br>-子线程的pcb是从主线程拷贝来的<br>主线程与子线程共享：<br>.txt、.bss、.data、堆、动态库加载区、环境变量区、命令行参数<br>不共享：<br>栈被各个线程均分</p><p>线程相关：<br>自行安装线程man page，命令：<br>sudo apt-get install manpages-posix-dev<br>察看指定线程的LWP号：<br>线程号和线程ID是有区别的<br>线程号是给内核看的<br>查看方式:找到程序的进程ID:ps -Lf pid<br>多线程和多进程区别：<br>多进程：<br>始终共享的资源<br>代码、文件描述符、mmap<br>线程共享：堆、全局变量<br>线程节省资源</p><p>编译：gcc xxx.c -lpthread<br>创建线程函数：pthread_create()<br>输出自己的线程号：pthread_self()<br>打印错误码的错误信息strerror()<br>单个线程退出pthread_exit()<br>阻塞等待线程退出，获取线程退出状态<br>回收子线程pthread_join()<br>线程分离pthread_detach()<br>调用该函数之后不需要pthread_join<br>子线程会自动回收自己的pcb<br>杀死(取消)线程pthread_cancel()<br>pthread_testcancel()<br>判断线程ID是否相等pthread_equal()</p><p>线程分离：<br>pthread_attr_init()<br>pthread_attr_setdetachstate()<br>PTHREAD_CREATE_DETACHED分离<br>PTHREAD_CREATE_JOINABLE非分离<br>pthread_attr_destroy()<br>数据混乱原因：操作了共享资源、cpu调度问题<br>解决：线程同步</p><p>锁：<br>如果锁是锁着的：<br>线程阻塞，阻塞在这把锁上<br>如果锁是打开的：<br>线程访问共享资源，然后锁上锁<br>本来多线程访问共享资源时候，可以并行<br>通过加锁机制并行-&gt;串行</p><p>互斥锁:串行<br>创建互斥锁：pthread_mutex_t mutex;<br>初始化互斥锁pthread_mutex_init()<br>销毁互斥锁pthread_mutex_destroy()<br>加锁pthread_mutex_lock()阻塞<br>尝试加锁pthread_mutex_trylock()不阻塞<br>解锁pthread_mutex_unlock()<br>互斥锁同步线程：所有线程都需要加锁<br>原子操作：<br>cpu处理一个指令，线程/进程在处理完这个指令之前是不会失去cpu的</p><p>读写锁：<br>pthread_rwlock_t lock;<br>初始化读写锁pthread_rwlock_init()<br>pthread_rwlock_destroy()<br>pthread_rwlock_rdlock()<br>pthread_rwlock_tryrdlock()<br>pthread_rwlock_wrlock()<br>pthread_rwlock_trywrlock()<br>pthread_rwlock_unlock()<br>读写锁的类型：<br>读锁-对内存做读操作<br>写锁-对内存做写操作</p><p>条件变量：<br>不是锁，但是条件变量能够阻塞线程<br>使用条件变量+互斥量<br>主要函数：<br>初始化一个条件变量pthread_cond_init()<br>销毁一个条件变量pthread_cond_destroy()<br>唤醒至少一个阻塞在条件变量上的线程pthread_cond_signal()<br>阻塞等待一个条件变量pthread_cond_wait()<br>限时等待一个条件变量pthread_cond_timedwait()</p><p>信号量：并行<br>头文件：semaphore.h<br>信号量类型：sem_t sem加强版的互斥锁<br>初始化信号量：sem_init()<br>0-线程同步<br>1-进程同步<br>value-最多有几个线程操作共享数据<br>销毁信号量：sem_destroy()<br>加锁：sem_wait()<br>尝试加锁：sem_trywait()<br>限时尝试加锁：sem_timedwait()<br>解锁：sem_post()</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;线程：&lt;br&gt;创建线程之后，地址空间没有变化&lt;br&gt;进程退出成了线程-主线程&lt;br&gt;创建出的子线程和主线程共用地址空间&lt;br&gt;主线程和子线程有各自独立的pcb&lt;br&gt;-子线程的pcb是从主线程拷贝来的&lt;br&gt;主线程与子线程共享：&lt;br&gt;.txt、.bss、.data、堆、动
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>进程间通信IPC</title>
     <link href="http://yoursite.com/2018/11/27/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1IPC/"/>
     <id>http://yoursite.com/2018/11/27/进程间通信IPC/</id>
     <published>2018-11-27T12:08:00.000Z</published>
-    <updated>2018-11-27T12:09:08.155Z</updated>
+    <updated>2018-11-29T07:13:11.292Z</updated>
     
-    <content type="html"><![CDATA[<p>进程的五种状态：<br>初始态、就绪态、运行态、挂起态、终止态</p><p>fork()创建子进程<br>父进程成功，fork()返回子进程的PID<br>子进程成功，fork()返回0<br>getpid() 获取进程ID<br>getppid()获取父进程ID<br>父子间进程不能通过全局变量共享内存，线程是可以的<br>exec函数族：需要注意的是exec并不是1个函数, 其实它只是一组函数的统称, 它包括下面6个函数<br>execl、 execlp、 execle、execv、 execvp、 execve<br>exec函数族重新替换.txt中的代码，执行exec中的代码</p><p>孤儿进程<br>爹先死，孩子还活着，孩子叫孤儿进程<br>孤儿被init进程领养，init进程变成孤儿进程的父亲<br>为了释放子进程占用的系统资源<br>进程结束之后，能够释放用户区空间<br>释放不了pcb，必须由父进程释放</p><p>僵尸进程<br>孩子死了，爹还活着，爹不去释放子进程的pcb，孩子就变成了僵尸进程<br>是一个死了的进程<br>回收进程：<br>wait() 阻塞函数<br>waitpid()<br>WIFEXITED(status);为非0进程正常结束<br>WEXITSTATUS(status) status为子进程退出状态<br>WIFSIGNALED(status);为非0进程异常终止<br>WTERMSIG(status) </p><p>进程间通信IPC<br>常用几种方式：<br>管道-简单<br>信号-系统开销小<br>信号量<br>消息队列<br>共享映射区-有无血缘关系的进程间通信都可以<br>本地套接字-稳定</p><p>匿名管道：pipe<br>本质：内核缓冲区、伪文件不占用磁盘空间<br>特点：<br>两部分：读端，写端对应两个文件描述符<br>数据写端流入，读端流出<br>操作管道的进程被销毁之后，管道自动被释放了<br>管道默认是阻塞的<br>使用场景：只能血缘关系进程间通信<br>管道的原理：<br>内部实现方式：队列 环形队列 fifo<br>缓冲区：默认4K<br>管道的局限性：<br>队列：数据只能读取一次，不能重复读取<br>半双工<br>设置读端为非阻塞：<br>int flags = fcntl(fd[0],F_GETFL);<br>flags |= O_NONBLOCK;<br>fcntl(fd[0],F_SETFL,flags);</p><p>有名管道：fifo<br>特点：在磁盘上有这样一个文件p<br>伪文件，在磁盘大小永远为0<br>在内核中有一个对应的缓冲区<br>半双工的通信方式<br>使用场景：无血缘关系进程间通信<br>创建方式：mkfifo 管道名</p><p>内存映射:mmap<br>mmap()建立内存映射区<br>munmap()释放内存映射区<br>匿名内存映射区(父子间进程通信)</p><p>信号：signal<br>特点：简单，携带的信息量少，使用在某个特定的场景中<br>信号的状态：<br>产生：键盘、命令kill、系统函数、定时器、段错误，除0错误<br>未决状态：没有被处理<br>递达：信号被处理了</p><p>信号处理：忽略、捕捉、执行默认动作<br>概念：阻塞信号集、未决信号集<br>相关函数：<br>kill() 发送信号给指定进程<br>raise()自己给自己发信号<br>abort()给自己发送给异常终止信号<br>闹钟(定时器)：<br>alarm()设置定时器(每个进程只有一个定时器)<br>settimer()定时器，并实现周期性定时<br>自定义信号集<br>sigemptyset()将set集合置空<br>sigfillset()将所有信号加入set集合<br>sigaddset()将signo信号加入到set集合<br>sigmember()判断信号是否存在<br>sigpending() 读取当前进程的未决信号集<br>sigprocmask()自定义信号集设置给内核阻塞信号集<br>signal()注册捕捉函数<br>sigaction()捕捉信号</p><p>守护进程：<br>一般步骤：<br>先fork,夫进程死，子进程执行创建会话操作<br>setsid()设置会话组<br>改变当前工作目录chdir<br>重设文件掩码umask(0)<br>关闭文件描述符0,1,2<br>执行核心工作</p>]]></content>
+    <content type="html"><![CDATA[<p>进程的五种状态：<br>初始态、就绪态、运行态、挂起态、终止态</p><p>fork()创建子进程<br>父进程成功，fork()返回子进程的PID<br>子进程成功，fork()返回0<br>getpid() 获取进程ID<br>getppid()获取父进程ID<br>父子间进程不能通过全局变量共享内存，线程是可以的<br>exec函数族：需要注意的是exec并不是1个函数, 其实它只是一组函数的统称, 它包括下面6个函数<br>execl、 execlp、 execle、execv、 execvp、 execve<br>exec函数族重新替换.txt中的代码，执行exec中的代码</p><p>孤儿进程<br>爹先死，孩子还活着，孩子叫孤儿进程<br>孤儿被init进程领养，init进程变成孤儿进程的父亲<br>为了释放子进程占用的系统资源<br>进程结束之后，能够释放用户区空间<br>释放不了pcb，必须由父进程释放</p><p>僵尸进程<br>孩子死了，爹还活着，爹不去释放子进程的pcb，孩子就变成了僵尸进程<br>是一个死了的进程<br>回收进程：<br>wait() 阻塞函数<br>waitpid()<br>WIFEXITED(status);为非0进程正常结束<br>WEXITSTATUS(status) status为子进程退出状态<br>WIFSIGNALED(status);为非0进程异常终止<br>WTERMSIG(status) </p><p>进程间通信IPC<br>常用几种方式：<br>管道-简单<br>信号-系统开销小<br>信号量<br>消息队列<br>共享映射区-有无血缘关系的进程间通信都可以<br>本地套接字-稳定</p><p>匿名管道：pipe<br>本质：内核缓冲区、伪文件不占用磁盘空间<br>特点：<br>两部分：读端，写端对应两个文件描述符<br>数据写端流入，读端流出<br>操作管道的进程被销毁之后，管道自动被释放了<br>管道默认是阻塞的<br>使用场景：只能血缘关系进程间通信<br>管道的原理：<br>内部实现方式：队列 环形队列 fifo<br>缓冲区：默认4K<br>管道的局限性：<br>队列：数据只能读取一次，不能重复读取<br>半双工<br>设置读端为非阻塞：<br>int flags = fcntl(fd[0],F_GETFL);<br>flags |= O_NONBLOCK;<br>fcntl(fd[0],F_SETFL,flags);</p><p>有名管道：fifo<br>特点：在磁盘上有这样一个文件p<br>伪文件，在磁盘大小永远为0<br>在内核中有一个对应的缓冲区<br>半双工的通信方式<br>使用场景：无血缘关系进程间通信<br>创建方式：mkfifo 管道名</p><p>内存映射:mmap<br>mmap()建立内存映射区<br>munmap()释放内存映射区<br>匿名内存映射区(父子间进程通信)</p><p>信号：signal<br>特点：简单，携带的信息量少，使用在某个特定的场景中<br>信号的状态：<br>产生：键盘、命令kill、系统函数、定时器、段错误，除0错误<br>未决状态：没有被处理<br>递达：信号被处理了</p><p>信号处理：忽略、捕捉、执行默认动作<br>概念：阻塞信号集、未决信号集<br>相关函数：<br>kill() 发送信号给指定进程<br>raise()自己给自己发信号<br>abort()给自己发送给异常终止信号<br>闹钟(定时器)：<br>alarm()设置定时器(每个进程只有一个定时器)<br>settimer()定时器，并实现周期性定时<br>自定义信号集<br>sigemptyset()将set集合置空<br>sigfillset()将所有信号加入set集合<br>sigaddset()将signo信号加入到set集合<br>sigmember()判断信号是否存在<br>sigpending() 读取当前进程的未决信号集<br>sigprocmask()自定义信号集设置给内核阻塞信号集<br>signal()注册捕捉函数<br>sigaction()捕捉信号</p><p>守护进程：<br>一般步骤：<br>先fork,夫进程死，子进程执行创建会话操作<br>setsid()设置会话组<br>改变当前工作目录chdir<br>重设文件掩码umask(0)<br>关闭文件描述符0,1,2<br>执行核心工作</p><p>进程间同步：信号量、互斥锁、文件锁</p>]]></content>
     
     <summary type="html">
     
@@ -471,27 +496,6 @@
       
       
         &lt;h2 id=&quot;1-RGB模型&quot;&gt;&lt;a href=&quot;#1-RGB模型&quot; class=&quot;headerlink&quot; title=&quot;1. RGB模型&quot;&gt;&lt;/a&gt;1. RGB模型&lt;/h2&gt;&lt;p&gt;　　就编辑图像而言，RGB颜色模型是最佳的色彩模式，可以提供全屏幕的24bit的颜色范围，即真彩
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>lua开发环境搭建</title>
-    <link href="http://yoursite.com/2018/06/04/lua%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2018/06/04/lua开发环境搭建/</id>
-    <published>2018-06-04T12:27:47.006Z</published>
-    <updated>2018-06-04T09:46:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Lua的官方网站：<a href="http://www.lua.org/" target="_blank" rel="noopener">www.lua.org</a><br>win下lua源码编译：进入源码src目录下，执行make mingw（前提已经安装了MinGW）  </p><h2 id="lua直接执行脚本文件"><a href="#lua直接执行脚本文件" class="headerlink" title="-lua直接执行脚本文件"></a>-lua直接执行脚本文件</h2><ul><li>lua file_name</li></ul><h2 id="lua将脚本文件编译成字节码文件"><a href="#lua将脚本文件编译成字节码文件" class="headerlink" title="-lua将脚本文件编译成字节码文件"></a>-lua将脚本文件编译成字节码文件</h2><ul><li>luac -o out_fil file_name  </li></ul><h2 id="lua源码编译后的4个关键目标"><a href="#lua源码编译后的4个关键目标" class="headerlink" title="-lua源码编译后的4个关键目标"></a>-lua源码编译后的4个关键目标</h2><ul><li>Lua — 解释器，用于解释执行脚本或字节码文件</li><li>Luac — 编译器，用于将脚本文件编译成字节码文件</li><li>liblua — 静态链接库，可链接至宿主程序</li><li>lua5x — 动态链接库，可链接至宿主程序  </li></ul><p>注意：如果项目开放源代码可以使用脚本文件，如果是商业使用可以将脚本文件编译成二进制字节码文件。  </p><p>参考博文：<a href="http://www.cnblogs.com/shiwenjie/p/6693998.html" target="_blank" rel="noopener">Eagle-jie-搭建Lua开发环境</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Lua的官方网站：&lt;a href=&quot;http://www.lua.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.lua.org&lt;/a&gt;&lt;br&gt;win下lua源码编译：进入源码src目录下，执行make mingw（前提已经安装了MinGW
       
     
     </summary>
