@@ -266,6 +266,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/Linux网络编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Johanan Gao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/29/Linux网络编程/" itemprop="url">Linux网络编程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T15:16:00+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>以太网帧格式(MAC地址)<br>ARP数据报格式，获取下一跳的mac地址<br>IP段格式<br>UDP/TCP数据报格式<br>NAT映射，私网IP共用<br>打洞机制，提高传输效率<br>套接字：<br>socket成对出现<br>绑定IP+端口<br>一个文件描述符指向两个缓冲区：一个读，一个写</p>
+<p>网络字节序<br>网络数据流采用大端字节序<br>网络字节序和主机字节序的转换</p>
+<p>#include&lt;arpa/inet.h&gt;<br>uint32_t htonl(uint32_t hostlong);<br>uint16_t htons(uint16_t hostshort);<br>uint32_t ntohl(uint32_t netlong);<br>uint16_t ntohs(uint16_t netshort);<br>h表示host,n表示network,l表示long,s表示short</p>
+<p>IP转换<br>inet_pton()<br>inet_ntop()</p>
+<p>sockaddr数据结构<br>struct sockaddr xx;<br>查看man 7 ip<br>struct sockaddr_in xx;<br>struct sockaddr_un xx;<br>struct sockaddr_in6 xx;</p>
+<p>创建socket模型：<br>建立套接字socket()<br>绑定IP端口号bind()<br>同时建立链接的数listen()<br>阻塞等待客户端发起连接accept()<br>发起连接请求connect()</p>
+<p>测试：nc IP 端口</p>
+<p>三次握手四次挥手<br>TCP不会丢包(错)，丢了可以重传<br>UDP:组播(多播)、广播</p>
+<p>MTU、mss、半关闭<br>MTU:最大传输单元 受协议限制 以太网1500 IP65536<br>mss:受MTU标示一个数据包携带数据的上限数<br>win:滑动窗口-当前本端能接收的数据上限值</p>
+<p>IPV4:32位 192.168.12.0(10进制)<br>IPV6:128位 CDCD:910A:2222:5498:8475:1111:3900:2020(16进制)</p>
+<p>高并发服务器：<br>多进程多线程，如果数量太大系统开销也大</p>
+<p>多路I/O转接服务器<br>select()<br>cat /proc/sys/fs/file-max<br>vi /etc/security/limits.conf<br>poll()<br>epoll()</p>
+<p>sock选项setsockopt()</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/线程同步/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1625,178 +1781,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/19/静态库动态库制作/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Johanan Gao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="菜鸟记录">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/19/静态库动态库制作/" itemprop="url">静态库动态库制作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T10:53:00+08:00">
-                2018-11-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-静态库制作"><a href="#1-静态库制作" class="headerlink" title="1.静态库制作"></a>1.静态库制作</h4><ol>
-<li><p>命名规则：lib+库名+.a</p>
-</li>
-<li><p>制作步骤：</p>
-<p>1)、生成.o文件</p>
-<p>2)、将.o文件打包 ar rcs libxx.a xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p>
-</li>
-<li><p>静态库的优缺点：</p>
-<p>优点：分布程序的时候，不需要提供对应的库、加载库的速度快</p>
-<p>缺点：库被打包到应用程序中，导致程序体积很大、库发生了改变，需要重新编译程序</p>
-</li>
-</ol>
-<h4 id="2-动态库制作"><a href="#2-动态库制作" class="headerlink" title="2.动态库制作"></a>2.动态库制作</h4><ol>
-<li><p>命名规则：lib+库名+.so</p>
-</li>
-<li><p>制作步骤：</p>
-<p>1)、生成位置无关的.o文件 gcc -fPIC -c xx.c<br>2)、将.o文件打包 gcc -shared -o libxx.so xx.o<br>3)、分布和使用静态库：静态库和头文件 gcc main.c -I头文件路径 -L库路径 -l库名 -o xx</p>
-</li>
-<li><p>解决动态库不能链接问题：<br>vi /etc/ld.so.conf<br>sudo ldconfig -v</p>
-</li>
-<li><p>动态库的优缺点：<br>优点：执行程序体积小、动态库更新了，不需要重新编译程序，函数接口不变<br>缺点：发布程序的时候，需要将动态库提供给用户、动态库没有打包到应用程序中，加载速度相对较慢</p>
-</li>
-</ol>
-<ul>
-<li><p>nm命令列出目标文件的符号信息</p>
-</li>
-<li><p>ldd命令(list,dynamic,dependencies):列出动态库依赖关系</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1851,7 +1835,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-29T07:16:33.429Z</updated>
+  <updated>2018-12-04T13:47:28.404Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux网络编程</title>
+    <link href="http://yoursite.com/2018/11/29/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/11/29/Linux网络编程/</id>
+    <published>2018-11-29T07:16:00.000Z</published>
+    <updated>2018-12-04T13:47:28.404Z</updated>
+    
+    <content type="html"><![CDATA[<p>以太网帧格式(MAC地址)<br>ARP数据报格式，获取下一跳的mac地址<br>IP段格式<br>UDP/TCP数据报格式<br>NAT映射，私网IP共用<br>打洞机制，提高传输效率<br>套接字：<br>socket成对出现<br>绑定IP+端口<br>一个文件描述符指向两个缓冲区：一个读，一个写</p><p>网络字节序<br>网络数据流采用大端字节序<br>网络字节序和主机字节序的转换</p><p>#include&lt;arpa/inet.h&gt;<br>uint32_t htonl(uint32_t hostlong);<br>uint16_t htons(uint16_t hostshort);<br>uint32_t ntohl(uint32_t netlong);<br>uint16_t ntohs(uint16_t netshort);<br>h表示host,n表示network,l表示long,s表示short</p><p>IP转换<br>inet_pton()<br>inet_ntop()</p><p>sockaddr数据结构<br>struct sockaddr xx;<br>查看man 7 ip<br>struct sockaddr_in xx;<br>struct sockaddr_un xx;<br>struct sockaddr_in6 xx;</p><p>创建socket模型：<br>建立套接字socket()<br>绑定IP端口号bind()<br>同时建立链接的数listen()<br>阻塞等待客户端发起连接accept()<br>发起连接请求connect()</p><p>测试：nc IP 端口</p><p>三次握手四次挥手<br>TCP不会丢包(错)，丢了可以重传<br>UDP:组播(多播)、广播</p><p>MTU、mss、半关闭<br>MTU:最大传输单元 受协议限制 以太网1500 IP65536<br>mss:受MTU标示一个数据包携带数据的上限数<br>win:滑动窗口-当前本端能接收的数据上限值</p><p>IPV4:32位 192.168.12.0(10进制)<br>IPV6:128位 CDCD:910A:2222:5498:8475:1111:3900:2020(16进制)</p><p>高并发服务器：<br>多进程多线程，如果数量太大系统开销也大</p><p>多路I/O转接服务器<br>select()<br>cat /proc/sys/fs/file-max<br>vi /etc/security/limits.conf<br>poll()<br>epoll()</p><p>sock选项setsockopt()</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;以太网帧格式(MAC地址)&lt;br&gt;ARP数据报格式，获取下一跳的mac地址&lt;br&gt;IP段格式&lt;br&gt;UDP/TCP数据报格式&lt;br&gt;NAT映射，私网IP共用&lt;br&gt;打洞机制，提高传输效率&lt;br&gt;套接字：&lt;br&gt;socket成对出现&lt;br&gt;绑定IP+端口&lt;br&gt;一个文件描述符
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>线程同步</title>
@@ -475,27 +500,6 @@
 &lt;li&gt;reinterpret_cast      &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;用法：
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>计算机中的颜色模型</title>
-    <link href="http://yoursite.com/2018/06/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E9%A2%9C%E8%89%B2%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://yoursite.com/2018/06/09/计算机中的颜色模型/</id>
-    <published>2018-06-09T03:50:18.224Z</published>
-    <updated>2018-06-08T08:39:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-RGB模型"><a href="#1-RGB模型" class="headerlink" title="1. RGB模型"></a>1. RGB模型</h2><p>　　就编辑图像而言，RGB颜色模型是最佳的色彩模式，可以提供全屏幕的24bit的颜色范围，即真彩色显示。但是，如果将RGB模式用于打印就不是最佳的了，会损失一部分亮度，比较鲜艳的色彩肯定会失真的。  </p><p>　　RGB(red,green,blue)颜色模型最常用的用途就是显示器系统，彩色阴极射线管,彩色光栅图形的显示器都使用R、G、B数值来驱动R、G、B电子枪发射电子，并分别激发荧光屏上的R、G、B三种颜色的荧光粉发出不同亮度的光线，并通过相加混合产生各种颜色；扫描仪也是通过吸收原稿经反射或透射而发送来的光线中的R、G、B成分，并用它来表示原稿的颜色。RGB色彩空间称为与设备相关的色彩空间,因为不同的扫描仪扫描同一幅图像，会得到不同色彩的图像数据；不同型号的显示器显示同一幅图像，也会有不同的色彩显示结果。显示器和扫描仪使用的RGB空间与CIE 1931 RGB真实三原色表色系统空间是不同的，后者是与设备无关的颜色空间。btw：Photoshop的色彩选取器(Color Picker)。可以显示HSB、RGB、LAB和CMYK色彩空间的每一种颜色的色彩值。</p><p>　　我们可知自然界中任何一种色光都可由R、G、B三基色按不同的比例相加混合而成，当三基色分量都为0（最弱）时混合为黑色光；当三基色分量都为k（最强）时混合为白色光。任一颜色F是这个立方体坐标中的一点，调整三色系数r、g、b中的任一系数都会改变F的坐标值，也即改变了F的色值。RGB颜色空间采用物理三基色表示，因而物理意义很清楚，适合彩色显像管工作。然而这一体制并不适应人的视觉特点。因而，产生了其他不同的颜色空间表示法。</p><h2 id="2-HSV模型"><a href="#2-HSV模型" class="headerlink" title="2. HSV模型"></a>2. HSV模型</h2><p>　　HSV(Hue, Saturation, Value)是根据颜色的直观特性由A. R. Smith在1978年创建的一种颜色空间, 也称六角锥体模型(Hexcone Model)。HSV色系对用户来说是一种直观的颜色模型，对于颜色，人们直观的会问”什么颜色？深浅如何？明暗如何？“，而HSV色系则直观的表示了这些信息。</p><p>　　每一种颜色都是由色相（Hue，简H），饱和度（Saturation，简S）和色明度（Value，简V）所表示的。这个模型中颜色的参数分别是：色调（H），饱和度（S），亮度（V）。</p><p>　　色调H参数表示色彩信息，即所处的光谱颜色的位置。该参数用一角度量来表示，取值范围为0°～360°。若从红色开始按逆时针方向计算，红色为0°，绿色为120°，蓝色为240°。它们的补色是：黄色为60°，青色为180°，品红为300°</p><p>　　饱和度S：取值范围为0.0～1.0<br>　　亮度V：取值范围为0.0(黑色)～1.0(白色)。</p><h2 id="3-CMYK模型"><a href="#3-CMYK模型" class="headerlink" title="3. CMYK模型"></a>3. CMYK模型</h2><p>　　CMYK颜色模型包括青(cyan)、品红(magenta)、黄(yellow)和黑(black)，为避免与蓝色混淆，黑色用K表示。青、品红、黄分别是红、绿、蓝三基色的互补色。彩色打印、印刷等应用领域采用打印墨水、彩色涂料的反射光来显现颜色，是一种减色方式。</p><p>　　彩色打印机和彩色印刷都是采用这个原理。由于彩色墨水和颜料的化学特性，用等量的三种基色得到的黑色不是真正的黑色，因此在印刷术中加入一种真正的黑色，所以通常把CMY模型写成CMYK。</p><p>　　CMY是色料三原色，分别是青(Cyan)、品红(Magenta)、黄(Yellow)，利用油墨对光的吸收、透射和反射，产生不同的颜色。一般看到的印刷品的颜色，是经过了色料减色和色光加色两个过程的结果。油墨首先吸收一部分照明光，同时反射出不能吸收的部分，这些反射出来的色光再相互混合，最后以混合光的形式进入人眼，在大脑中形成相应的颜色。色料三原色是减色三原色，混合后能量相减，比原来的颜色灰暗些，理论上等量的三原色混合后产生黑色，但是由于油墨本身的纯度不可能做到理论上的极限值，CMY等量混合后的颜色一般是深灰色，因此再增加一个独立的黑色(K)，共同组成CMKY系统。</p><p>　　CMYK颜色用于打印和印刷复制，通过CMYK的值来确定给墨量，从而最终形成颜色。另外需要将图片进行打印和印刷时，则需要调整为CMYK颜色模式。在在图形制版过程中，首先将图片中的RGB分量提取出来，然后经过计算，得到CMYK的值，再由CMYK的值确定承印物上的颜色，此工艺在印刷过程中称为“分色”。</p><p>RGB、HSV、CMYK之间可以相互转换。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1-RGB模型&quot;&gt;&lt;a href=&quot;#1-RGB模型&quot; class=&quot;headerlink&quot; title=&quot;1. RGB模型&quot;&gt;&lt;/a&gt;1. RGB模型&lt;/h2&gt;&lt;p&gt;　　就编辑图像而言，RGB颜色模型是最佳的色彩模式，可以提供全屏幕的24bit的颜色范围，即真彩
       
     
     </summary>
