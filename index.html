@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/shell/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Johanan Gao">
@@ -285,7 +285,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/05/shell/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/12/01/shell/" itemprop="url">Shell脚本</a></h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T21:19:12+08:00">
-                2018-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T15:16:00+08:00">
+                2018-12-01
               </time>
             
 
@@ -307,6 +307,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -350,13 +372,13 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for MYFILE in $(ls) ; do</span><br><span class="line">	if [ -d "$MYFILE " ]; then</span><br><span class="line">		echo "it a dir."</span><br><span class="line">	elif [ -f "$MYFILE " ]; then</span><br><span class="line">		echo "it a file."</span><br><span class="line">	else</span><br><span class="line">		echo "other."</span><br><span class="line">	fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 <p>while/do/done<br>break/continue</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /bin/sh</span></span><br><span class="line">COUNTER=1</span><br><span class="line">while [ "$COUNTER" -lt 10 ];do</span><br><span class="line">	echo "Here we go again."</span><br><span class="line">	COUNTER=$(($COUNTER+1))</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<p>特殊变量和输入输出<br>$0 相当于argv[0]<br>$1 $2相当于argv[1] argv[2]<br>$# 相当于argc-1<br>$@ 参数列表，可用for..in循环中<br>$* 同上<br>$? 上一条命令的exit status<br>$$ 当前进程号<br>shift 参数列表左移一个</p>
+<p>特殊变量和输入输出:<br>$0 相当于argv[0]<br>$1 $2相当于argv[1] argv[2]<br>$# 相当于argc-1<br>$@ 参数列表，可用for..in循环中<br>$* 同上<br>$? 上一条命令的exit status<br>$$ 当前进程号<br>shift 参数列表左移一个</p>
 <p>echo<br>-e解析转义字符<br>-n 不解析转义字符</p>
 <p>tee 输出副本文件<br>wc命令<br>-c 统计字节数<br>-l 统计行数<br>-m 统计字符数,这个标志不能与 -c 标志一起使用<br>-w 统计字数,一个字被定义为由空白、跳格或换行字符分隔的字符串</p>
 <p>重定向<br>>  输出重定向<br>>> 追加<br>2>&amp;1 标准错误重定向到标准输出</p>
 <p>函数</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo()&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>调用函数：foo xx xx</p>
+<p>调用函数：foo xx xx(xx表示参数)</p>
 <p>调试shell<br>-n不执行，检查语法<br>-v一边执行一边打印到标准错误输出<br>-x提供跟踪执行信息<br>set -x启用参数<br>set +x禁用参数</p>
 
           
@@ -408,7 +430,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/Linux网络编程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/Linux网络编程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Johanan Gao">
@@ -427,7 +449,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/29/Linux网络编程/" itemprop="url">Linux网络编程</a></h1>
+                <a class="post-title-link" href="/2018/12/01/Linux网络编程/" itemprop="url">Linux网络编程</a></h1>
         
 
         <div class="post-meta">
@@ -439,8 +461,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T15:16:00+08:00">
-                2018-11-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T15:16:00+08:00">
+                2018-12-01
               </time>
             
 
@@ -1846,7 +1868,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
