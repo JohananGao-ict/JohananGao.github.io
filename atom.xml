@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-05T13:52:29.114Z</updated>
+  <updated>2018-12-05T13:51:11.291Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Shell脚本</title>
-    <link href="http://yoursite.com/2018/12/01/shell/"/>
-    <id>http://yoursite.com/2018/12/01/shell/</id>
-    <published>2018-12-01T07:16:00.000Z</published>
-    <updated>2018-12-05T13:52:29.114Z</updated>
-    
-    <content type="html"><![CDATA[<p>查看shell：echo $SHELL<br>查看内建命令:man bash-builtins<br>建立多个文件touch file{001..035}<br>unset删除变量<br>wildcard：*、？、[xx]<br>命令代换：$(xx)、`xx`<br>算术代换：$(())、$[base#n]<br>Shell中变量的原形：${var}<br>转义字符：\<br>单双引号：’字面值’、”可扩展”</p><p>条件测试：test、[xx]<br>-eq、-ne:等于、不等于<br>-lt、-gt:小于、大于<br>-le、-ge:小于等于、大于等于<br>字符串运算符：<br>=字符串相等<br>!=字符串不相等<br>-z字符串长度是否为0<br>-n字符串长度是否不为0<br>逻辑运算符：<br>&amp;&amp; 逻辑and<br>|| 逻辑or<br>文件测试运算符：<br>-b是否块设备<br>-c是否字符设备文件<br>-d是否目录</p><p>-e是否存在文件/目录<br>-f是否普通文件<br>-g是否设置SGID位</p><p>-k是否设置粘着位<br>-p是否管道文件<br>-u是否设置SUID位</p><p>-r是否可读<br>-w是否可写<br>-s文件是否为空<br>-x是否可执行<br>0表示:真<br>1表示:假</p><p>分支：<br>if/then/elif/else/fi<br>;一般用作代码块标识</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if [ -r &amp;file ] </span><br><span class="line">then</span><br><span class="line">echo "该文件可读"</span><br><span class="line">else</span><br><span class="line">echo "该文件不可读"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure><p>case/esac<br>;;结束</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">read -p "press some key ,then press return :" KEY</span><br><span class="line">case $KEY in</span><br><span class="line">[a-z]|[A-Z])</span><br><span class="line">echo "It's a letter."</span><br><span class="line">;;</span><br><span class="line">[0-9]) </span><br><span class="line">echo "It's a digit."</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo "It's function keys、Spacebar or other ksys."</span><br><span class="line">esac</span><br></pre></td></tr></table></figure><p>循环<br>for/do/done </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for MYFILE in $(ls) ; do</span><br><span class="line">if [ -d "$MYFILE " ]; then</span><br><span class="line">echo "it a dir."</span><br><span class="line">elif [ -f "$MYFILE " ]; then</span><br><span class="line">echo "it a file."</span><br><span class="line">else</span><br><span class="line">echo "other."</span><br><span class="line">fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure><p>while/do/done<br>break/continue</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /bin/sh</span></span><br><span class="line">COUNTER=1</span><br><span class="line">while [ "$COUNTER" -lt 10 ];do</span><br><span class="line">echo "Here we go again."</span><br><span class="line">COUNTER=$(($COUNTER+1))</span><br><span class="line">done</span><br></pre></td></tr></table></figure><p>特殊变量和输入输出:<br>$0 相当于argv[0]<br>$1 $2相当于argv[1] argv[2]<br>$# 相当于argc-1<br>$@ 参数列表，可用for..in循环中<br>$* 同上<br>$? 上一条命令的exit status<br>$$ 当前进程号<br>shift 参数列表左移一个</p><p>echo<br>-e解析转义字符<br>-n 不解析转义字符</p><p>tee 输出副本文件<br>wc命令<br>-c 统计字节数<br>-l 统计行数<br>-m 统计字符数,这个标志不能与 -c 标志一起使用<br>-w 统计字数,一个字被定义为由空白、跳格或换行字符分隔的字符串</p><p>重定向<br>>  输出重定向<br>>> 追加<br>2>&amp;1 标准错误重定向到标准输出</p><p>函数</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>调用函数：foo xx xx(xx表示参数)</p><p>调试shell<br>-n不执行，检查语法<br>-v一边执行一边打印到标准错误输出<br>-x提供跟踪执行信息<br>set -x启用参数<br>set +x禁用参数</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;查看shell：echo $SHELL&lt;br&gt;查看内建命令:man bash-builtins&lt;br&gt;建立多个文件touch file{001..035}&lt;br&gt;unset删除变量&lt;br&gt;wildcard：*、？、[xx]&lt;br&gt;命令代换：$(xx)、`xx`&lt;br&gt;算术代
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
-    
-    
-      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
-    
-  </entry>
   
   <entry>
     <title>Linux网络编程</title>
@@ -63,6 +38,31 @@
     
     
       <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Shell脚本</title>
+    <link href="http://yoursite.com/2018/12/01/shell/"/>
+    <id>http://yoursite.com/2018/12/01/shell/</id>
+    <published>2018-12-01T07:16:00.000Z</published>
+    <updated>2018-12-05T13:52:29.114Z</updated>
+    
+    <content type="html"><![CDATA[<p>查看shell：echo $SHELL<br>查看内建命令:man bash-builtins<br>建立多个文件touch file{001..035}<br>unset删除变量<br>wildcard：*、？、[xx]<br>命令代换：$(xx)、`xx`<br>算术代换：$(())、$[base#n]<br>Shell中变量的原形：${var}<br>转义字符：\<br>单双引号：’字面值’、”可扩展”</p><p>条件测试：test、[xx]<br>-eq、-ne:等于、不等于<br>-lt、-gt:小于、大于<br>-le、-ge:小于等于、大于等于<br>字符串运算符：<br>=字符串相等<br>!=字符串不相等<br>-z字符串长度是否为0<br>-n字符串长度是否不为0<br>逻辑运算符：<br>&amp;&amp; 逻辑and<br>|| 逻辑or<br>文件测试运算符：<br>-b是否块设备<br>-c是否字符设备文件<br>-d是否目录</p><p>-e是否存在文件/目录<br>-f是否普通文件<br>-g是否设置SGID位</p><p>-k是否设置粘着位<br>-p是否管道文件<br>-u是否设置SUID位</p><p>-r是否可读<br>-w是否可写<br>-s文件是否为空<br>-x是否可执行<br>0表示:真<br>1表示:假</p><p>分支：<br>if/then/elif/else/fi<br>;一般用作代码块标识</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if [ -r &amp;file ] </span><br><span class="line">then</span><br><span class="line">echo "该文件可读"</span><br><span class="line">else</span><br><span class="line">echo "该文件不可读"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure><p>case/esac<br>;;结束</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">read -p "press some key ,then press return :" KEY</span><br><span class="line">case $KEY in</span><br><span class="line">[a-z]|[A-Z])</span><br><span class="line">echo "It's a letter."</span><br><span class="line">;;</span><br><span class="line">[0-9]) </span><br><span class="line">echo "It's a digit."</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo "It's function keys、Spacebar or other ksys."</span><br><span class="line">esac</span><br></pre></td></tr></table></figure><p>循环<br>for/do/done </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for MYFILE in $(ls) ; do</span><br><span class="line">if [ -d "$MYFILE " ]; then</span><br><span class="line">echo "it a dir."</span><br><span class="line">elif [ -f "$MYFILE " ]; then</span><br><span class="line">echo "it a file."</span><br><span class="line">else</span><br><span class="line">echo "other."</span><br><span class="line">fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure><p>while/do/done<br>break/continue</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>! /bin/sh</span><br><span class="line">COUNTER=1</span><br><span class="line">while [ "$COUNTER" -lt 10 ];do</span><br><span class="line">echo "Here we go again."</span><br><span class="line">COUNTER=$(($COUNTER+1))</span><br><span class="line">done</span><br></pre></td></tr></table></figure><p>特殊变量和输入输出:<br>$0 相当于argv[0]<br>$1 $2相当于argv[1] argv[2]<br>$# 相当于argc-1<br>$@ 参数列表，可用for..in循环中<br>$* 同上<br>$? 上一条命令的exit status<br>$$ 当前进程号<br>shift 参数列表左移一个</p><p>echo<br>-e解析转义字符<br>-n 不解析转义字符</p><p>tee 输出副本文件<br>wc命令<br>-c 统计字节数<br>-l 统计行数<br>-m 统计字符数,这个标志不能与 -c 标志一起使用<br>-w 统计字数,一个字被定义为由空白、跳格或换行字符分隔的字符串</p><p>重定向<br>>  输出重定向<br>>> 追加<br>2>&amp;1 标准错误重定向到标准输出</p><p>函数</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>调用函数：foo xx xx(xx表示参数)</p><p>调试shell<br>-n不执行，检查语法<br>-v一边执行一边打印到标准错误输出<br>-x提供跟踪执行信息<br>set -x启用参数<br>set +x禁用参数</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;查看shell：echo $SHELL&lt;br&gt;查看内建命令:man bash-builtins&lt;br&gt;建立多个文件touch file{001..035}&lt;br&gt;unset删除变量&lt;br&gt;wildcard：*、？、[xx]&lt;br&gt;命令代换：$(xx)、`xx`&lt;br&gt;算术代
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
     
   </entry>
   
@@ -174,9 +174,9 @@
     <link href="http://yoursite.com/2018/11/24/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://yoursite.com/2018/11/24/Linux常用命令/</id>
     <published>2018-11-24T13:25:00.000Z</published>
-    <updated>2018-11-26T11:05:44.551Z</updated>
+    <updated>2018-12-06T07:55:55.572Z</updated>
     
-    <content type="html"><![CDATA[<p>chmod chown chgrp<br>chmod修改文件的权限<br>chown修改文件的所有者，例如：chown zhangsan:lisi filename<br>filename属于zhangsan用户lisi组<br>chgrp修改文件的所属组</p><p>查找和检索<br>文件属性查找：find<br>文件名：find / -name “搜索文件”<br>文件大小：find / -size +10M -size -100M(大于10M小于100M)<br>文件类型：find / -type d/f/b/c/s/p/l   f表示普通文件<br>文件内容查找：grep<br>格式：grep -r +“查找关键字”+路径<br>例如：grep -r “stdio.h” /home/aa<br>which命令在PATH路径中搜索<br>whereis命令用于搜索二进制文件，源代码，帮助文档<br>whereis -m只查看帮助文档<br>whereis -b只查找二进制文件<br>type用于查看命令类型<br>alias：别名<br>keyword：关键字<br>builtin：内置命令<br>file：外部命令<br>locate xx快速查找文件，从系统数据库进行查找</p><p>创建管道：mkfifo aa<br>time xx统计命令执行的时间</p><p>用户管理<br>添加用户：<br>adduser<br>useradd -s /bin/bash -g robin -d /home/robin/ -m robin<br>设置密码：passwd robin<br>添加用户组：groupadd robin<br>删除用户：<br>deluser<br>userdel -r robin  连家目录一起删除</p><p>umask掩码：<br>如果用户创建的是目录，则默认所有权限都开放，为777<br>如果创建的是文件，默认没有x权限，那么就只有r、w两项，最大值为666<br>新建文件：666-022=644<br>新建目录：777-022=755<br>ulimit -a 用来显示当前的各种用户进程限制<br>查看linux端口被哪个进程占用<br>lsof -i：端口号<br>netstat -tunlp | grep 端口号 </p>]]></content>
+    <content type="html"><![CDATA[<p>chmod chown chgrp<br>chmod修改文件的权限<br>chown修改文件的所有者，例如：chown zhangsan:lisi filename<br>filename属于zhangsan用户lisi组<br>chgrp修改文件的所属组</p><p>查找和检索<br>文件属性查找：find<br>文件名：find / -name “搜索文件”<br>文件大小：find / -size +10M -size -100M(大于10M小于100M)<br>文件类型：find / -type d/f/b/c/s/p/l   f表示普通文件<br>-maxdepth<br>-exec<br>-ok<br>-print<br>-atime 访问时间<br>-amin<br>-mtime 文件内容修改时间<br>-mmin<br>-ctime 文件属性修改时间<br>-cmin<br>-mtime +5 五天以前<br>-mtime -5 五天以内<br>time以天为单元，min是分钟<br>xargs<br>find ./ -maxdepth 1 -type f -print0 |xargs -i ls -lh {}<br>find ./ -maxdepth 1 -type f -print0 |xargs -0 ls -lh<br>find ./ -maxdepth 1 -name “*.sh” -exec ls -lh {} \<br>文件内容查找：grep<br>格式：grep -r +“查找关键字”+路径<br>例如：grep -r “stdio.h” /home/aa<br>which命令在PATH路径中搜索<br>whereis命令用于搜索二进制文件，源代码，帮助文档<br>whereis -m只查看帮助文档<br>whereis -b只查找二进制文件<br>type用于查看命令类型<br>alias：别名<br>keyword：关键字<br>builtin：内置命令<br>file：外部命令<br>locate xx快速查找文件，从系统数据库进行查找</p><p>创建管道：mkfifo aa<br>time xx统计命令执行的时间</p><p>用户管理<br>添加用户：<br>adduser<br>useradd -s /bin/bash -g robin -d /home/robin/ -m robin<br>设置密码：passwd robin<br>添加用户组：groupadd robin<br>删除用户：<br>deluser<br>userdel -r robin  连家目录一起删除</p><p>umask掩码：<br>如果用户创建的是目录，则默认所有权限都开放，为777<br>如果创建的是文件，默认没有x权限，那么就只有r、w两项，最大值为666<br>新建文件：666-022=644<br>新建目录：777-022=755<br>ulimit -a 用来显示当前的各种用户进程限制<br>查看linux端口被哪个进程占用<br>lsof -i：端口号<br>netstat -tunlp | grep 端口号 </p>]]></content>
     
     <summary type="html">
     

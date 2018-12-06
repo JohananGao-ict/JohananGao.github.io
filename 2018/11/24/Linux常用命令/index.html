@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="菜鸟记录">
 <meta property="og:description" content="chmod chown chgrpchmod修改文件的权限chown修改文件的所有者，例如：chown zhangsan:lisi filenamefilename属于zhangsan用户lisi组chgrp修改文件的所属组 查找和检索文件属性查找：find文件名：find / -name “搜索文件”文件大小：find / -size +10M -size -100M(大于10M小于100M)文">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-26T11:05:44.551Z">
+<meta property="og:updated_time" content="2018-12-06T07:55:55.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令">
 <meta name="twitter:description" content="chmod chown chgrpchmod修改文件的权限chown修改文件的所有者，例如：chown zhangsan:lisi filenamefilename属于zhangsan用户lisi组chgrp修改文件的所属组 查找和检索文件属性查找：find文件名：find / -name “搜索文件”文件大小：find / -size +10M -size -100M(大于10M小于100M)文">
@@ -357,7 +357,7 @@
 
       
         <p>chmod chown chgrp<br>chmod修改文件的权限<br>chown修改文件的所有者，例如：chown zhangsan:lisi filename<br>filename属于zhangsan用户lisi组<br>chgrp修改文件的所属组</p>
-<p>查找和检索<br>文件属性查找：find<br>文件名：find / -name “搜索文件”<br>文件大小：find / -size +10M -size -100M(大于10M小于100M)<br>文件类型：find / -type d/f/b/c/s/p/l   f表示普通文件<br>文件内容查找：grep<br>格式：grep -r +“查找关键字”+路径<br>例如：grep -r “stdio.h” /home/aa<br>which命令在PATH路径中搜索<br>whereis命令用于搜索二进制文件，源代码，帮助文档<br>whereis -m只查看帮助文档<br>whereis -b只查找二进制文件<br>type用于查看命令类型<br>alias：别名<br>keyword：关键字<br>builtin：内置命令<br>file：外部命令<br>locate xx快速查找文件，从系统数据库进行查找</p>
+<p>查找和检索<br>文件属性查找：find<br>文件名：find / -name “搜索文件”<br>文件大小：find / -size +10M -size -100M(大于10M小于100M)<br>文件类型：find / -type d/f/b/c/s/p/l   f表示普通文件<br>-maxdepth<br>-exec<br>-ok<br>-print<br>-atime 访问时间<br>-amin<br>-mtime 文件内容修改时间<br>-mmin<br>-ctime 文件属性修改时间<br>-cmin<br>-mtime +5 五天以前<br>-mtime -5 五天以内<br>time以天为单元，min是分钟<br>xargs<br>find ./ -maxdepth 1 -type f -print0 |xargs -i ls -lh {}<br>find ./ -maxdepth 1 -type f -print0 |xargs -0 ls -lh<br>find ./ -maxdepth 1 -name “*.sh” -exec ls -lh {} \<br>文件内容查找：grep<br>格式：grep -r +“查找关键字”+路径<br>例如：grep -r “stdio.h” /home/aa<br>which命令在PATH路径中搜索<br>whereis命令用于搜索二进制文件，源代码，帮助文档<br>whereis -m只查看帮助文档<br>whereis -b只查找二进制文件<br>type用于查看命令类型<br>alias：别名<br>keyword：关键字<br>builtin：内置命令<br>file：外部命令<br>locate xx快速查找文件，从系统数据库进行查找</p>
 <p>创建管道：mkfifo aa<br>time xx统计命令执行的时间</p>
 <p>用户管理<br>添加用户：<br>adduser<br>useradd -s /bin/bash -g robin -d /home/robin/ -m robin<br>设置密码：passwd robin<br>添加用户组：groupadd robin<br>删除用户：<br>deluser<br>userdel -r robin  连家目录一起删除</p>
 <p>umask掩码：<br>如果用户创建的是目录，则默认所有权限都开放，为777<br>如果创建的是文件，默认没有x权限，那么就只有r、w两项，最大值为666<br>新建文件：666-022=644<br>新建目录：777-022=755<br>ulimit -a 用来显示当前的各种用户进程限制<br>查看linux端口被哪个进程占用<br>lsof -i：端口号<br>netstat -tunlp | grep 端口号 </p>
