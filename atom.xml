@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-13T03:33:54.245Z</updated>
+  <updated>2018-12-13T03:59:24.232Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSON语法规则</title>
+    <link href="http://yoursite.com/2018/12/14/JSON%20%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/"/>
+    <id>http://yoursite.com/2018/12/14/JSON 语法规则/</id>
+    <published>2018-12-14T07:16:00.000Z</published>
+    <updated>2018-12-13T03:59:24.232Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>JSON 语法规则</strong> </p><p>JSON 语法是 JavaScript 对象表示法语法的子集</p><ul><li>数据在名称/值对中</li><li>数据由逗号分隔</li><li>大括号保存对象</li><li>中括号保存数组</li></ul><p>注意：<u>json的key是字符串,且必须是双引号，不能是单引号</u></p><p>json的value是Object</p><p>json的解析：json是js的原生内容，也就意味着js可以直接取出json对象中的数据</p><p><strong>JSON 名称/值对</strong> </p><p>JSON 数据的书写格式是：名称/值对</p><p>名称/值对包括字段名称（在双引号中），后面写一个冒号，然后是值</p><p><strong>JSON 值</strong> </p><ul><li>数字（整数或浮点数）</li><li>字符串（在双引号中）</li><li>逻辑值（true 或 false）</li><li>数组（在中括号中）</li><li>对象（在大括号中）</li><li>null</li></ul><p><strong>JSON 文件</strong> </p><ul><li>JSON 文件的文件类型是 “.json”</li><li>JSON 文本的 MIME 类型是 “application/json”</li></ul><p><a href="https://www.toutiao.com/a6604050324036518404/?tt_from=mobile_qq&amp;utm_campaign=client_share&amp;timestamp=1544672435&amp;app=news_article&amp;utm_source=mobile_qq&amp;iid=25942348816&amp;utm_medium=toutiao_android&amp;group_id=6604050324036518404" target="_blank" rel="noopener">参考</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;JSON 语法规则&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;JSON 语法是 JavaScript 对象表示法语法的子集&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据在名称/值对中&lt;/li&gt;
+&lt;li&gt;数据由逗号分隔&lt;/li&gt;
+&lt;li&gt;大括号保存对象&lt;/li&gt;
+&lt;li&gt;中括号保存
+      
+    
+    </summary>
+    
+      <category term="JSON" scheme="http://yoursite.com/categories/JSON/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>正则表达式</title>
@@ -473,31 +502,6 @@
       
       
         &lt;p&gt;​    回调函数就是一个通过函数指针调用的函数。如果你把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，我们就说这是回调函数。回调函数不是由该函数的实现方直接调用，而是在特定的事件或条件发生时由另外的一方调用的，用于对该事件或条件进行响应
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>C语言中的柔性数组</title>
-    <link href="http://yoursite.com/2018/06/13/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%9F%94%E6%80%A7%E6%95%B0%E7%BB%84/"/>
-    <id>http://yoursite.com/2018/06/13/C语言中的柔性数组/</id>
-    <published>2018-06-13T12:55:35.536Z</published>
-    <updated>2018-06-18T13:57:49.753Z</updated>
-    
-    <content type="html"><![CDATA[<p>柔性数组即数组大小待定的数组，应用在了变长结构体中 </p><p>C语言中可以由结构体产生柔性数组</p><p>C语言中结构体的最后一个元素可以是大小未知的数组</p><p>用法：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SoftArray</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">array</span>[];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//....</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SoftArray</span> *<span class="title">sa</span>=<span class="title">NULL</span>;</span></span><br><span class="line">sa=(struct SoftArray*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct SoftArray)+<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*<span class="number">5</span>);</span><br><span class="line">sa-&gt;len=<span class="number">5</span>;</span><br></pre></td></tr></table></figure><p>sizeof(struct SoftArray)=4</p><p>struct SoftArray中的array仅是一个待使用的标示符，不占用存储空间</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;柔性数组即数组大小待定的数组，应用在了变长结构体中 &lt;/p&gt;
-&lt;p&gt;C语言中可以由结构体产生柔性数组&lt;/p&gt;
-&lt;p&gt;C语言中结构体的最后一个元素可以是大小未知的数组&lt;/p&gt;
-&lt;p&gt;用法：&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;
       
     
     </summary>
